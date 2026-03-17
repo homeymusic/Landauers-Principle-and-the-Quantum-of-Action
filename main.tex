@@ -43,10 +43,10 @@
 \DeclareMathOperator*{\argmin}{argmin}
 \begin{document}
 
-\title{Information Erasure Inside Heisenberg Blobs}
+\title{Information Erasure Inside Quantum Blobs}
 
 \begin{abstract}
-Quantum microstates are operationally indistinguishable within finite-support Heisenberg areas in phase space. Within these action blobs, the principle of least action compels Landauer information erasure of quantum microstates into coarse-grained observables. This erasure precludes the classical continuum, necessitating discrete configurations and the emergence of quantum mechanics.
+Quantum microstates are operationally indistinguishable within finite-support quantum blobs. Within these action areas, the principle of least action compels Landauer information erasure of quantum microstates into minimal-action states. This erasure precludes the classical continuum, necessitating discrete configurations and the emergence of quantum mechanics.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -61,8 +61,8 @@ Quantum microstates are operationally indistinguishable within finite-support He
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-\caption{\textbf{Information erasure inside conjugate Heisenberg blobs} (schematic). 
-System boundaries $\Delta q$ and $\Delta p$ determine the total action $A$, while the reciprocal relations $\delta q \propto 1 / \Delta p$ and $\delta p \propto 1 / \Delta q$ characterize the symplectic squeezing of the conjugate pair of action quanta: $A_{\delta q} = \frac{\pi}{4} \delta_q \Delta p$ and $A_{\delta p} = \frac{\pi}{4} \Delta q \delta p$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from the microstate $q_\mu, p_\mu$ with binary encoding $s_\mu$ to the minimal action state $(q^*,p^*)$ with the minimal binary encoding $\mathbf{s}^*$, where bit-length $|\mathbf{s}^*| \le |s_\mu|$; the physical scales satisfy $A_q + A_p = h$, $\epsilon_q \le \delta_q \le \Delta q$, and $\epsilon_p \le \delta_p \le \Delta p$.}
+\caption{\textbf{Information erasure inside conjugate quantum blobs} (schematic). 
+System boundaries $\Delta q$ and $\Delta p$ determine the total action area, $A$, while the reciprocal relations $\delta q \propto 1 / \Delta p$ and $\delta p \propto 1 / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $A_{\delta q} = \frac{\pi}{4} \delta_q \Delta p = \frac{h}{2}$ and $A_{\delta p} = \frac{\pi}{4} \Delta q \delta p = \frac{h}{2}$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from the microstate $q_\mu, p_\mu$ with binary encoding $s_\mu$ to the minimal action state $(q^*,p^*)$ with the minimal binary encoding $\mathbf{s}^*$, where bit-length $|\mathbf{s}^*| \le |s_\mu|$. The physical scales satisfy $\epsilon_q \le \delta q \le \Delta q$ and $\epsilon_p \le \delta p \le \Delta p$.}
 
 \label{fig:erase}
 \end{figure}
@@ -71,7 +71,7 @@ System boundaries $\Delta q$ and $\Delta p$ determine the total action $A$, whil
 
 \begin{equation}
 \label{eq:SimpleLanguageHero}
-\text{Erasure Action} \le \text{Total Phase Area}
+\text{Information Erasure Action} \le \text{System Phase Space Area}
 \end{equation}
 
 \begin{equation}
@@ -80,36 +80,45 @@ K E_L \tau \le A
 \end{equation}
 
 \begin{equation}
+\label{eq:DualBitCounts}
+(K_q + K_p) E_L \tau \le A
+\end{equation}
+
+\begin{equation}
+\label{eq:ErasureTimeMargolusLevitin}
+\tau_\perp = \frac{h}{4 E_L}
+\end{equation}
+
+\subsection{One Blob or Two?}
+
+In the standard interpretation of the Heisenberg Uncertainty Principle, as a system's total action scales up, its minimal phase-space area---the single blob defined by $\Delta q \Delta p$---must expand. However, the foundational architects of quantum mechanics recognized that this mathematical behavior contradicts the macroscopic world. As Schr\"{o}dinger observed in 1926 \cite{Schrodinger1926}, and Einstein formally critiqued in 1953 \cite{Einstein1953}, permitting a single uncertainty cell to grow proportionately with a system's action predicts that everyday objects should exist as delocalized, unobservable smears. 
+
+This unphysical prediction would later drive theorists to formally define the strict boundaries of empirical macrorealism \cite{Popper1967, LeggettGarg1985}. While Schr\"{o}dinger patched this macroscopic paradox by introducing coherent states---relying on the infinite superposition of wavefunctions to force localization---and others relegated the expanding uncertainty strictly to statistical ensembles \cite{Ballentine1970}, we propose a geometric solution. Here, quantum and macroscopic scaling are achieved through a pair of orthogonal, conjugate quantum blob, governed as polar duals $A_{\delta q}$ and $A_{\delta p}$ whose sum strictly conserves the quantum of action $h$.
+
+Where de Gosson \cite{degosson2009iceberg} illustrated the constraint on a single symplectic area by recalling the biblical camel:
+\begin{quote}
+``\dots It is easier for a camel to pass through the eye of a needle than for one who is rich to enter the kingdom of God\dots''
+\end{quote}
+\noindent our model requires a conjugate pair. As one symplectic area is squeezed through the needle's eye, its polar dual must proportionately expand---a reciprocal geometry manifested by the \textit{r\'iastrad} (distortion) of the Old Irish hero C\'u Chulainn:
+\begin{quote}
+``He squeezed one eye no wider than the eye of a needle; he opened the other wider than the mouth of a mead-cup.'' \cite{RiastradNote}
+\end{quote}
+
+In the ground state, this conjugate pair is degenerate, operating as a single isotropic circle in phase space. However, as the system's total action increases, the area does not uniformly expand into an unobservable blur. Instead, the geometry squeezes the blobs into a pair of orthogonal ellipses---one stretching horizontally while its polar dual stretches vertically. The orthogonal cigar shapes narrow, ultimately sharpening into fine crosshairs. This precise intersection recovers the sharp, localized point of classical macrorealism, restoring the correspondence principle through convex symplectic geometry.
+
+\begin{equation}
 \label{eq:ConjugateActionArea}
 (K_q + K_p) E_L \tau \le \frac{A}{h} (A_{\delta q} + A_{\delta p})
 \end{equation}
 
 \begin{equation}
 \label{eq:SimpleLanguageBlobs}
-\text{Quantum of Action} = \text{Conjugate Phase Areas}
+\text{Quantum of Action} = \text{Conjugate Quantum Blobs Area}
 \end{equation}
 
 \begin{equation}
 \label{eq:Blobs}
 h = A_{\delta q} + A_{\delta p}
-\end{equation}
-
-\begin{equation}
-    \text{Area}(\mathcal{E}_{\delta q}) = A_{\delta q} = \frac{h}{2}
-\end{equation}
-
-\begin{equation}
-    \text{Area}(\mathcal{E}_{\delta p}) = A_{\delta p} = \frac{h}{2}
-\end{equation}
-
-\begin{equation}
-\label{eq:EyeQ}
-\mathcal{E}_{\delta q}: \quad \frac{4q^2}{\delta q^2} + \frac{4p^2}{\Delta p^2} \le 1
-\end{equation}
-
-\begin{equation}
-\label{eq:EyeP}
-\mathcal{E}_{\delta p}: \quad \frac{4q^2}{\Delta q^2} + \frac{4p^2}{\delta p^2} \le 1
 \end{equation}
 
 \begin{equation}
@@ -129,68 +138,10 @@ A_{\delta q} = \frac{\pi}{4} \delta q \Delta p = \frac{h}{2} \quad \text{and} \q
 q = \frac{A}{h} \epsilon_q  \quad \text{and} \quad p = \frac{A}{h} \epsilon_p
 \end{equation}
 
-
-\begin{equation}
-\label{eq:ErasureTimeMargolusLevitin}
-\tau_\perp = \frac{h}{4 E_L}
-\end{equation}
-
-
-
-
 \begin{equation}
 \label{eq:TopologicalQuantumNumber}
 n = \left\lfloor \frac{A}{h} \right\rfloor
 \end{equation}
-
-We define the \textbf{conjugate exchange operator}, denoted by $^\circledcirc$, as the physical mapping that precisely swaps the local microscopic precisions ($\delta q, \delta p$) with their respective macroscopic spreads ($\Delta q, \Delta p$) while preserving the fundamental capacity area of $\pi \hbar / 2$. 
-
-For a general physical system (e.g., a particle in a 1D box), the conjugate observational bounds are defined universally as:
-
-\begin{equation}
-    \mathcal{E}_{\delta q}: \quad \frac{4q^2}{\delta q^2} + \frac{4p^2}{\Delta p^2} \le 1
-\end{equation}
-
-\begin{equation}
-    \mathcal{E}_{\delta p}: \quad \frac{4q^2}{\Delta q^2} + \frac{4p^2}{\delta p^2} \le 1
-\end{equation}
-
-These two bounding areas are therefore symplectically squeezed conjugates of one another, mathematically expressed as:
-
-\begin{equation}
-    \mathcal{E}_{\delta q} = \mathcal{E}_{\delta p}^\circledcirc
-\end{equation}
-
-\subsection*{The Isotropic Limit: Polar Duality in the QHO}
-
-In the perfectly isotropic limit where the physical potential strictly perfectly matches the symmetry of the phase space (such as the ground state of the Quantum Harmonic Oscillator, where $\Delta q \equiv \Delta p$ and $\delta q \equiv \delta p$), the conjugate exchange operator reduces to the standard $\hbar$-scaled geometric polar dual:
-
-\begin{equation}
-    \mathcal{E}_{\delta p}^\circledcirc \equiv \mathcal{E}_{\delta p}^\circ
-\end{equation}
-
-Thus, only in the completely symmetric case do the two observational bounds collapse into exact mathematical polar duals of one another:
-
-\begin{equation}
-    \mathcal{E}_{\delta q} = \mathcal{E}_{\delta p}^\circ
-\end{equation}
-
-\subsection{One Blob or Two?}
-
-The orthodox application of the Heisenberg Uncertainty Principle implies that as a system's total action scales up, its minimal phase-space area---the single ``blob'' defined by $\Delta q \Delta p$---must expand. However, the foundational architects of quantum mechanics recognized that this mathematical behavior contradicts the macroscopic world. As Schr\"{o}dinger observed in 1926 \cite{Schrodinger1926}, and Einstein formally critiqued in 1953 \cite{Einstein1953}, permitting a single uncertainty cell to grow proportionately with a system's energy strictly predicts that everyday objects should exist as delocalized, unobservable smears. 
-
-This unphysical prediction would later drive theorists to formally define the strict boundaries of empirical macrorealism \cite{Popper1967, LeggettGarg1985}. While Schr\"{o}dinger ultimately patched this macroscopic paradox by introducing coherent states---relying on the infinite superposition of wavefunctions to force localization---and others relegated the expanding uncertainty strictly to statistical ensembles \cite{Ballentine1970}, we propose a strictly geometric solution. Here, macroscopic scaling is achieved through a pair of orthogonal, conjugate phase-space areas, governed by orthogonal duals $A_{\delta q}  + A_{\delta p}$ that strictly conserve the quantum of action $h$.
-
-Where de Gosson \cite{degosson2009iceberg} illustrated the constraint on a single symplectic area by recalling the biblical camel:
-\begin{quote}
-``\dots It is easier for a camel to pass through the eye of a needle than for one who is rich to enter the kingdom of God\dots''
-\end{quote}
-\noindent our model requires a conjugate pair. As one symplectic area is squeezed through the needle's eye, its orthogonal dual must proportionately expand---a reciprocal geometry manifested by the \textit{r\'iastrad} (severe body contortion) of the Old Irish hero C\'u Chulainn:
-\begin{quote}
-``He squeezed one eye no wider than the eye of a needle; he opened the other wider than the mouth of a mead-cup.'' \cite{boyd2025essential, kinsella1969tain, windischdunn1914tain, lebornahuidre}
-\end{quote}
-
-Visually, this geometric evolution paints a remarkably intuitive picture of the transition from quantum uncertainty to classical precision. At the absolute ground state, this conjugate pair is perfectly degenerate, operating as a single isotropic circle in phase space. However, as the system's total action scales up, the area does not uniformly expand into an unobservable blur. Instead, the geometry squeezes the blobs into a pair of orthogonal ellipses---one stretching horizontally while its dual stretches vertically. As the system continues toward the macroscopic limit, these orthogonal cigar shapes narrow relentlessly, ultimately sharpening into fine crosshairs. This precise intersection recovers the sharp, localized point of classical macrorealism, restoring the correspondence principle purely through geometry.
 
 \subsection{The Information-Action Limit}
 
