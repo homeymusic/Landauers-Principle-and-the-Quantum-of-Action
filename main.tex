@@ -62,7 +62,7 @@ Quantum microstates are operationally indistinguishable within finite-support qu
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
 \caption{\textbf{Information erasure inside conjugate quantum blobs} (schematic). 
-System boundaries $\Delta q$ and $\Delta p$ determine the total action area, $A$, while the reciprocal relations $\delta q \propto 1 / \Delta p$ and $\delta p \propto 1 / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $A_{\delta q} = \frac{\pi}{4} \delta_q \Delta p = \frac{h}{2}$ and $A_{\delta p} = \frac{\pi}{4} \Delta q \delta p = \frac{h}{2}$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from the microstate $q_\mu, p_\mu$ with binary encoding $s_\mu$ to the minimal action state $(q^*,p^*)$ with the minimal binary encoding $\mathbf{s}^*$, where bit-length $|\mathbf{s}^*| \le |s_\mu|$. The physical scales satisfy $\epsilon_q \le \delta q \le \Delta q$ and $\epsilon_p \le \delta p \le \Delta p$.}
+System boundaries $\Delta q$ and $\Delta p$ determine the total action area, $A$, while the reciprocal relations $\delta q \propto 1 / \Delta p$ and $\delta p \propto 1 / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $A_{\delta q} = \pi \delta_q \Delta p = \frac{h}{2}$ and $A_{\delta p} = \pi \Delta q \delta p = \frac{h}{2}$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from the microstate $q_\mu, p_\mu$ with binary encoding $s_\mu$ to the minimal action state $(q^*,p^*)$ with the minimal binary encoding $\mathbf{s}^*$, where bit-length $|\mathbf{s}^*| \le |s_\mu|$. The physical scales satisfy $\epsilon_q \le \delta q \le \Delta q$ and $\epsilon_p \le \delta p \le \Delta p$.}
 
 \label{fig:erase}
 \end{figure}
@@ -112,6 +112,11 @@ In the ground state, this conjugate pair is degenerate, operating as a single is
 \end{equation}
 
 \begin{equation}
+\label{eq:TotalSystemArea}
+A = \pi \Delta q \Delta p
+\end{equation}
+
+\begin{equation}
 \label{eq:SimpleLanguageBlobs}
 \text{Quantum of Action} = \text{Conjugate Quantum Blobs Area}
 \end{equation}
@@ -123,14 +128,13 @@ h = A_{\delta q} + A_{\delta p}
 
 \begin{equation}
 \label{eq:BlobAreas}
-A_{\delta q} = \frac{\pi}{4} \delta q \Delta p = \frac{h}{2} \quad \text{and} \quad A_{\delta p} = \frac{\pi}{4}\delta p \Delta q = \frac{h}{2}
+A_{\delta q} = \pi \delta q \Delta p = \frac{h}{2} \quad \text{and} \quad A_{\delta p} = \pi \delta p \Delta q = \frac{h}{2}
 \end{equation}
 
 \begin{equation}
 \label{eq:ErasureDistance}
 \epsilon_q = q_\mu - q^*  \quad \text{and} \quad \epsilon_p = p_\mu - p^* 
 \end{equation}
-
 
 
 \begin{equation}
@@ -143,193 +147,16 @@ q = \frac{A}{h} \epsilon_q  \quad \text{and} \quad p = \frac{A}{h} \epsilon_p
 n = \left\lfloor \frac{A}{h} \right\rfloor
 \end{equation}
 
-\subsection{The Information-Action Limit}
-
-The action available for information erasure within a conjugate pair of finite-support Heisenberg cells, the action quanta, is
-\begin{equation}
-\label{eq:InfoActionLimit}
-b E \tau \le \pi \hbar,
-\end{equation}
-where $b = b_q + b_p = |\mathbf{s}^*_q| + |\mathbf{s}^*_p|$ is the count of bits in the minimal binary encoding $\mathbf{s}^*_q, \mathbf{s}^*_p$ of the physical state $(q,p)$, $E = k_B T \ln 2$ is the Landauer erasure energy, and $\tau$ is the erasure time. The total action $\pi \hbar$ is the minimal phase-space area of finite support; unlike statistical variance $\sigma_q \sigma_p$, the boundaries $\Delta q$ and $\Delta p$ define the hard Heisenberg limits where states are operationally indistinguishable \cite{DeGosson2003}.
-
-\section{Information Erasure Inside the Conjugate Action Quanta}
-
-\subsection{The General Form: Conjugate Action Quanta}
-
-The physical action available for information erasure is constrained within a conjugate pair of action quanta. The total action, $A_q + A_p = \pi \hbar$, partitions between the spatial and momentum quanta according to the relative geometric proportions of the phase-space supports, $\Delta q$ and $\Delta p$.
-
-\textit{Action Partition:}
-\begin{equation}
-\label{eq:GeneralPartition}
-A_q = \frac{\pi \hbar}{1 + \left ( \frac{\Delta p / p_0}{\Delta q / q_0}\right )^2}, \quad A_p = \frac{\pi \hbar}{1 + \left (\frac{\Delta q/q_0}{\Delta p/p_0}\right )^2 }
-\end{equation}
-
-\textit{Symplectic Capacities:}
-\begin{equation}
-\label{eq:GeneralCapacities}
-\delta_q = \frac{4 A_q}{\pi \Delta p}, \quad \delta_p = \frac{4 A_p}{\pi \Delta q}
-\end{equation}
-
-\textit{Discrete Tiling:}
-\begin{equation}
-\label{eq:GeneralTiling}
-N_q = \max\left(1, \left\lfloor \frac{\Delta p/p_0}{\Delta q / q_0} \right\rfloor\right), \quad N_p = \max\left(1, \left\lfloor \frac{\Delta q/q_0}{\Delta p/p_0} \right\rfloor\right)
-\end{equation}
-
-The supports $\Delta p$ and $\Delta q$ define the macrostate boundaries, while the minor diameters $\delta_q$ and $\delta_p$ define the resolution limit—the threshold of the hard Heisenberg limits where microstates become operationally indistinguishable.
-
-\subsection{The Harmonic Oscillator: Symmetrical Quanta}
-
-The Harmonic Oscillator is a state of dynamical equilibrium. In the ground state, the potential and kinetic energies are balanced, resulting in symmetric supports where $\Delta q = \Delta p$.
-
-\textit{Action Partition:}
-\begin{equation}
-A_q = \frac{\pi}{4} \delta_q \Delta p = \frac{\pi \hbar}{2}, \quad A_p = \frac{\pi}{4} \Delta q \delta_p = \frac{\pi \hbar}{2}
-\end{equation}
-
-\textit{Symplectic Capacities:}
-\begin{equation}
-\delta_q = \frac{2 \hbar}{\Delta p}, \quad \delta_p = \frac{2 \hbar}{\Delta q}
-\end{equation}
-
-\textit{Discrete Tiling:}
-\begin{equation}
-N_q = 1, \quad N_p = 1
-\end{equation}
-
-\subsection{The Particle in a Box: Asymmetrical Quanta}
-
-In a box of width $L$, the spatial support is fixed ($\Delta q = L$). This physical constraint forces the conjugate pair into a geometric asymmetry as the momentum support $\Delta p$ increases relative to the spatial scale $q_0$.
-
-\textit{Action Partition:}
-\begin{equation}
-A_q = \frac{\pi \hbar}{1 + \left ( \frac{\Delta p/p_0}{L/q_0}\right )^2}, \quad A_p = \frac{\pi \hbar}{1 + \left (\frac{L/q_0}{\Delta p / p_0} \right )^2}
-\end{equation}
-
-\textit{Symplectic Capacities:}
-\begin{equation} 
-\delta_q = \frac{4 \hbar}{\Delta p \left( 1 + \left[ \frac{\Delta p/p_0}{L/q_0} \right]^2 \right)}, \quad \delta_p = \frac{4 \hbar}{L \left( 1 + \left[ \frac{L/q_0}{\Delta p/p_0} \right]^2 \right)} 
-\end{equation}
-
-\textit{Discrete Tiling:}
-\begin{equation}
-N_q = \max\left(1, \left\lfloor \frac{\Delta p/p_0}{L/q_0} \right\rfloor\right), \quad N_p = 1
-\end{equation}
-
-As $\Delta p$ increases, the momentum resolution remains at its fundamental limit, while the spatial support $L$ is resolved by an increasing count of tiles defined by the squeezed spatial capacity $\delta_q$.
-
-\subsection{The Free Particle: Conjugate Action Redistribution}
-
-In the Free Wave Packet, the momentum support remains a constant of motion $p_0$, while the spatial support $\Delta q(t)$ increases linearly. This expansion is a continuous redistribution of action within the conjugate pair. 
-
-\textit{Action Partition:}
-\begin{equation}
-A_q(t) = \frac{\pi \hbar}{1 + \left ( \frac{1}{\Delta q(t) / q_0}\right )^2}, \quad A_p(t) = \frac{\pi \hbar}{1 + \left ( \Delta q(t)/q_0 \right )^2 }
-\end{equation}
-
-\textit{Symplectic Capacities:}
-\begin{equation}
-\delta_q(t) = \frac{4 A_q(t)}{\pi p_0}, \quad \delta_p(t) = \frac{4 A_p(t)}{\pi \Delta q(t)}
-\end{equation}
-
-\textit{Discrete Tiling:}
-\begin{equation}
-N_q(t) = \max\left(1, \left\lfloor \frac{1}{\Delta q(t) / q_0} \right\rfloor\right), \quad N_p(t) = \max\left(1, \left\lfloor \Delta q(t) / q_0 \right\rfloor\right)
-\end{equation}
-
-The total action budget is conserved as the spatial dimension draws action from its conjugate momentum partner, allowing the state to maintain its operational structure as it spreads.
-
-\subsection{Bell's Theorem: Angular Quanta}
-
-\begin{equation}
-\label{eq:GeneralPartition}
-A_\theta = ?, \quad A_L = ? 
-\end{equation}
-
-\section{Thermodynamics and Geometry}
-
-These equations relate by
-
-\begin{equation}
-\label{eq:ThermoGeo}
-A_L \le A \le A_{d\Gamma} = \pi \hbar,
-\end{equation}
-
-where $A_L \coloneqq b E \tau$, $A = A_q + A_p$, and $A_{d\Gamma} \coloneqq \pi \hbar$. 
-
-\subsection{Fine Structure}
-
-There is a self-similar hierarchy $|\epsilon_q| \le \delta_q \le \Delta q$ where $\alpha$ is the  ratio between three nested physical scales:
-\begin{itemize}
-        \item \textbf{Erasure $|\epsilon_q|$:} The ``micro'' range where microstates $\mu_q$ are collapsed.
-        \item \textbf{Squeezed $\delta_q$:} The ``meso'' range of the squeezed Heisenberg cell boundary.
-        \item \textbf{Quantum $\Delta q$:} The ``macro'' range of the Hamiltonian support.
-    \end{itemize}
-    \textit{Insight:} Each level of the hierarchy ``erases'' the same proportion of information ($\alpha$) to move to the next level of coarse-graining.
-
-\begin{equation}
-\label{eq:alpha1}
-\alpha_\epsilon = \frac{|\epsilon_q|}{\delta_q} = \frac{|\epsilon_q| \Delta p}{2 \hbar}
-\end{equation} where $\epsilon_q \coloneqq \mu_q - q$ is the erasure distance and $\delta_q \coloneqq\frac{2 \hbar}{\Delta p}$ is the quantum of action coordinate bound for $A_q$. The ratio of the coordinate quantum of action bound to the overall Hamiltonian (akin to $\lambda_e/a_0$) is
-
-\begin{equation}
-\label{eq:alpha2}
-\alpha_\delta =  \frac{\delta_q}{\Delta q} = \frac{2 \hbar}{\Delta q \Delta p}.
-\end{equation} And the ratio of the erasure distance to the overall Hamiltonian (akin to $r_e/a_0$)
-
-\begin{equation}
-\label{eq:alpha3}
-\alpha_\Delta^2 = \frac{|\epsilon_q|}{\Delta q}.
-\end{equation}
-
-All together we have \begin{equation}
-\label{eq:alpha_combined}
-|\epsilon_q| = \alpha \delta_q = \alpha^2 \Delta q
-\end{equation}
-\section{Normalized Equations}
-
-\subsection{Normalized Harmonic Oscillator}
-
-Each of the two minimal action quanta are $A_0 = 2 \cdot\frac{\pi}{4} q_0 p_0 = \pi \hbar$. The operationally indistinguishable microstates are represented as $\mu_q \coloneqq q_0 q_?$ and $\mu_p \coloneqq p_0 p_?$, while the macrostates $\mathbf{q}^*$ and $\mathbf{p}^*$, encoded with the action available in each orthogonal quanta, are defined as $q \coloneqq q_0 \mathbf{q}^*$ and $p \coloneqq p_0 \mathbf{p}^*$. The maximal extent and maximal momentum of the system are represented as $\Delta q \coloneqq q_0 \mathcal{Q}$ and $\Delta p \coloneqq p_0 \mathcal{P}$, subject to the support constraints $\mathcal{Q}, \mathcal{P} \ge 1$, which prevent resolution from exceeding the system's unit action scale.
-
-\begin{equation}
-\frac{\pi}{4} \delta_q \Delta p = \frac{\pi \hbar}{2}
-\end{equation}
-
-\begin{equation}
-\frac{\pi}{4} q_0 |q_? - \mathbf{q}^*| p_0 \mathcal{P} = \frac{\pi \hbar}{2}
-\end{equation}
-
-\begin{equation}
-\label{eq:SymplecticBounds}
-|q_? - \mathbf{q}^*| \le \mathcal{P}^{-1}, 
-\quad 
-|p_? - \mathbf{p}^*| \le \mathcal{Q}^{-1},
-\end{equation}
-
-\subsection{Normalized Rigid Rotor}
-
-Landauer erasure for the rigid rotor within conjugate action quanta is bounded by the phase-dependent resolution limits:
-\begin{equation}
-\label{eq:RotorBounds}
-|q_? - \mathbf{Q}^*| \le \frac{4 \cos^2 \phi}{\pi |\sin \phi|}, 
-\quad 
-|p_? - \mathbf{P}^*| \le \frac{4 \sin^2 \phi}{\pi |\cos \phi|},
-\end{equation}
-where the operationally indistinguishable microstates are represented as $\mu_q \coloneqq R q_?$ and $\mu_p \coloneqq p_\omega p_?$, while the macrostates $\mathbf{Q}^*$ and $\mathbf{P}^*$, encoded with the action partitioned by the phase angle $\phi$, are defined as $q \coloneqq R \mathbf{Q}^*$ and $p \coloneqq p_\omega \mathbf{P}^*$. 
-
-Physical accessibility is maintained only for non-vanishing conjugate supports; specifically, spatial resolution requires $|\sin \phi| > 0$ while momentum resolution requires $|\cos \phi| > 0$. The divergence of these capacities represents the threshold of total information erasure, mirroring the Heisenberg floor ($\mathcal{P}, \mathcal{Q} \ge 1$) where the system reaches the limit of a single unit action quantum.
-
 \section{Numerical Simulations}
 
 \begin{algorithmic}
-\Function{erase}{$x, \delta_x$}
+\Function{erase}{$x_\mu, \delta x$}
     \State $\text{left} \gets (-1, 0), \quad \text{right} \gets (1, 0)$
     \State $\text{num} \gets 0, \quad \text{den} \gets 1$
-    \State $\mathbf{X}^* \gets \text{num} / \text{den}$
+    \State $x^* \gets \text{num} / \text{den}$
     \State $\mathbf{s}^* \gets \text{""}$
-    \While{$|x - \mathbf{X}^*| > \delta_x$}
-        \If{$\mathbf{X}^* < x$} 
+    \While{$|x_\mu - x^*| > \delta_x$}
+        \If{$x^* < x_\mu$} 
             \State $\text{left} \gets (\text{num}, \text{den})$
             \State $\mathbf{s}^* \gets \mathbf{s}^* + \text{'1'}$
         \Else 
@@ -338,35 +165,15 @@ Physical accessibility is maintained only for non-vanishing conjugate supports; 
         \EndIf
         \State $\text{num} \gets \text{left}_{num} + \text{right}_{num}$
         \State $\text{den} \gets \text{left}_{den} + \text{right}_{den}$
-        \State $\mathbf{X}^* \gets \text{num} / \text{den}$
+        \State $x^* \gets \text{num} / \text{den}$
     \EndWhile
-    \State $\epsilon_x \gets \mathbf{X}^* - x$
-    \State \Return $\mathbf{X}^*, \mathbf{s}^*, \epsilon_x$
+    \State $\epsilon_x \gets x^* - x_\mu$
+    \State \Return $x^*, \mathbf{s}^*, \epsilon_x$
 \EndFunction
 \end{algorithmic}
 
 \subsection{The Harmonic Oscillator Simulation}
 
-\begin{equation}
-(\mathbf{Q}^*, \mathbf{s}^*_q, \epsilon_q) \gets \texttt{erase}(q_?, \mathcal{P}^{-1})
-\end{equation}
-\begin{equation}
-(\mathbf{P}^*, \mathbf{s}^*_p, \epsilon_p) \gets \texttt{erase}(p_?, \mathcal{Q}^{-1})
-\end{equation}
-
-\section{Topological Node Extraction via Deterministic Hysteresis}
-
-To extract the effective quantum number $n$ from the deterministic erasure density $\rho(q)$, we employ a hysteresis-based topological filter. Unlike stochastic models, our density function is fully deterministic and repeatable; however, the discrete nature of the Stern-Brocot transform introduces high-frequency fine-structure modulations (quantization artifacts) superimposed on the macroscopic wavefunction.
-
-To rigorously distinguish true topological nodes from these fine-scale artifacts, we implement a symmetric \textit{Schmitt trigger} detection logic. We define a scale-adaptive prominence threshold $T_{h}$ derived from the signal's mean amplitude:
-
-\begin{equation}
-    T_{h} = k \sqrt{\langle \rho \rangle}
-\end{equation}
-
-where $k=2$ sets the rejection floor for quantization ripples. This square-root scaling ensures that the detector's sensitivity adapts to the signal intensity, maintaining robust topological identification across orders of magnitude in momentum space.
-
-The algorithm scans the density $\rho(q)$ outward from the potential center ($|q| \to \infty$). A node is registered if and only if the density executes a full hysteresis loop: descending into a local minimum and subsequently recovering by an amplitude $\Delta \rho \ge T_{h}$. This logic effectively filters out the deterministic "texture" of the number-theoretic lattice, isolating the fundamental oscillatory modes of the physical state.
 \section{Foundational Manuscripts}
 
 \begin{itemize}
