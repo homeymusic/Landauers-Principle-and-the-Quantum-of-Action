@@ -45,8 +45,9 @@
 \title{Information Erasure Inside the Quantum of Action}
 
 \begin{abstract}
-Quantum microstates are operationally indistinguishable inside Planck's quantum of action. Within this finite area of phase space, we show that the principle of least abbreviated action compels Landauer information erasure of each microstate into the minimal-action state. This erasure precludes the classical continuum, necessitating discrete configurations and the emergence of quantum mechanics.
+Quantum microstates are operationally indistinguishable inside Planck's quantum of action. We show that Landauer's principle compels the erasure of each microstate into the minimal-action state. This erasure coarse-grains the classical continuum, selecting the discrete configurations of quantum mechanics.
 \end{abstract}
+
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
 \email{brian@homeymusic.com}
@@ -55,11 +56,7 @@ Quantum microstates are operationally indistinguishable inside Planck's quantum 
 
 \maketitle
 
-\begin{figure}[t!]
-    \centering
-    \includegraphics[width=\linewidth]{erase.pdf}
-\caption{\textbf{Information erasure inside the quantum of action} (schematic). Boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A$ in phase space. The reciprocal relations $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from each microstate $(q_\mu, p_\mu)$ with binary encoding $s_\mu$ to the minimal-action state $(q^*,p^*)$ with the minimal binary encoding $s^*$, where the minimal bit count is the Kolmogorov complexity $K = |s^*| \le |s_\mu|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$.}
-\end{figure}
+\subsection{Erasure Action}
 
 \begin{equation}
 \label{eq:SimpleLanguageHero}
@@ -75,8 +72,9 @@ K E_L \tau \le A
 \subsection{One Blob or Two?}
 
 \begin{quote}
-``It is easier for a camel to pass through the eye of a needle than for one who is rich to enter the kingdom of God.'' \cite{DeGosson2009Iceberg}
+``It is easier for a camel to pass through the eye of a needle than for one who is rich to enter the kingdom of God.'' \cite{NABRE2011}
 \end{quote}
+
 \begin{quote}
 ``He squeezed one eye no wider than the eye of a needle; he opened the other wider than the mouth of a mead-cup.'' \cite{RiastradNote}
 \end{quote}
@@ -96,7 +94,6 @@ K E_L \tau \le A
 h = \pi \delta q \Delta p + \pi \Delta q \delta p
 \end{equation}
 
-
 \begin{equation}
 \label{eq:ConjugateActionArea}
 (K_q + K_p) E_L \tau \le \frac{A}{h} (\pi \delta q \Delta p + \pi \Delta q \delta p)
@@ -106,6 +103,12 @@ h = \pi \delta q \Delta p + \pi \Delta q \delta p
 \label{eq:BlobSqueeze}
 \delta q = \frac{\hbar}{\Delta p} \quad \text{and} \quad \delta p = \frac{\hbar}{\Delta q}
 \end{equation}
+
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{erase.pdf}
+\caption{\textbf{Information erasure inside the quantum of action} (schematic). Boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A$ in phase space. The reciprocal relations $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from each microstate $(q_\mu, p_\mu)$ with binary encoding $s_\mu$ to the minimal-action state $(q^*,p^*)$ with the minimal binary encoding $s^*$, where the minimal bit count is the Kolmogorov complexity $K = |s^*| \le |s_\mu|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$.}
+\end{figure}
 
 \begin{equation}
 \label{eq:ResolvingPowerPlain}
@@ -140,42 +143,13 @@ h = \pi \delta q \Delta p + \pi \Delta q \delta p
 \caption{\textbf{The John Ellipse Uncertainty} (schematic). The area of the John ellipse contained within the orthogonal pair of quantum blobs is $\pi \delta q \delta p = \frac{h^2}{4 \pi \Delta q \Delta p}$, which yields the uncertainty relation $\delta q \delta p = \frac{\hbar^2}{\Delta q \Delta p}$.}
 \end{figure}
 
-\subsection{The Principle of Least Abbreviated Action}
+\subsection{Erasure Distance}
 
 \begin{equation}
 \label{eq:ErasureDistance}
 \epsilon_q = q_\mu - q^*  \quad \text{and} \quad \epsilon_p = p_\mu - p^* 
 \end{equation}
 
-\begin{equation}
-\label{eq:ConjugateActionErasureArea}
-(K_q + K_p) E_L \tau = \frac{A}{h} (\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|) \le A
-\end{equation}
-
-\begin{equation}
-\label{eq:PrincipleOfLeastAbbreviatedAction_q}
-\oint p \, dq = \pi \left( \frac{A}{h} |\epsilon_q| \right) \Delta p
-\end{equation}
-
-\begin{equation}
-\label{eq:PrincipleOfLeastAbbreviatedAction_p}
-\left| \oint q \, dp \right| = \pi \left( \frac{A}{h} |\epsilon_p| \right) \Delta q
-\end{equation}
-
-\begin{equation}
-\label{eq:MaupertuisVariation_q}
-\delta \oint p \, dq = \pi \left( \frac{A}{h} \right) \Delta p \, \delta |\epsilon_q| = 0
-\end{equation}
-
-\begin{equation}
-\label{eq:MaupertuisVariation_p}
-\delta \left| \oint q \, dp \right| = \pi \left( \frac{A}{h} \right) \Delta q \, \delta |\epsilon_p| = 0
-\end{equation}
-
-\begin{equation}
-\label{eq:PrincipleOfLeastAbbreviatedAction}
-\delta |\epsilon_q| = 0 \quad \text{and} \quad \delta |\epsilon_p| = 0
-\end{equation}
 
 \subsection{Excess Action}
 
@@ -263,7 +237,7 @@ Let the generic variable $x \in \{q, p\}$ denote any phase-space coordinate.
 \begin{itemize}
     \item \textbf{Uncertainty}
     \begin{itemize}
-        \item Heisenberg \cite{Heisenberg1927, Heisenberg1983_English}
+        \item Heisenberg \cite{Heisenberg1927}
         \item de Gosson \cite{DeGosson2003}
         \item Zurek \cite{Zurek2001}
     \end{itemize}
@@ -271,31 +245,18 @@ Let the generic variable $x \in \{q, p\}$ denote any phase-space coordinate.
     \item \textbf{Thermodynamics}
     \begin{itemize}
         \item Landauer \cite{Landauer1961}
-        \item Plenio and Vitelli \cite{PlenioVitelli2001}
         \item Margolus and Levitin \cite{MargolusLevitin1998}
     \end{itemize}
     
-    \item \textbf{Methodology}
+    \item \textbf{Stern-Brocot Tree}
     \begin{itemize}
-        \item Stern \cite{Stern1858}
-        \item Brocot \cite{Brocot1861}
         \item Graham, Knuth, and Patashnik \cite{ConcreteMath}
-        \item Stolzenburg \cite{Stolzenburg2015}
         \item Aiylam \cite{Aiylam2013}
     \end{itemize}
     
     \item \textbf{Criticism of Macroscopic $\Delta q \Delta p$}
     \begin{itemize}
-        \item Schr\"{o}dinger \cite{Schrodinger1926, Schrodinger1928_English}
-        \item Einstein \cite{Einstein1953, BornEinsteinLetters1971}
-        \item Popper \cite{Popper1967}
-        \item Ballentine \cite{Ballentine1970}
-        \item Leggett and Garg \cite{LeggettGarg1985}
-    \end{itemize}
-
-    \item \textbf{Principle of Least Abbreviated Action}
-    \begin{itemize}
-        \item Arnold \cite{Arnold1989}
+        \item Schr\"{o}dinger \cite{Schrodinger1980Trimmer}
     \end{itemize}
 
 \end{itemize}
