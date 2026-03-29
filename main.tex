@@ -55,6 +55,7 @@ Quantum microstates are operationally indistinguishable inside Planck's quantum 
 \date{\today}
 
 \maketitle
+
 \subsection{Erasure Action}
 
 \begin{equation}
@@ -126,25 +127,47 @@ Because both areas are required to bound the space, the total quantum of action 
 h = \pi \delta q \Delta p + \pi \Delta q \delta p
 \end{equation}
 
+\subsection{Erasure Action in Phase Space}
+
+\begin{equation}
+\label{eq:SimpleLanguagePhaseSpaceHero}
+\text{Erasure Action} \le \text{Quantum Capacity} \times \text{Pair of Blobs}
+\end{equation}
+
+\begin{equation}
+\label{eq:HeroPhaseSpace}
+(K_q + K_p) E_L \tau \le \frac{A}{h} (\pi \delta q \Delta p + \pi \Delta q \delta p)
+\end{equation}
+
 \subsection{Quantum Density from Erasure}
 
-In standard phase-space formulations, the density of states is modeled statistically using the continuous Wigner quasi-probability distribution $W(q,p)$. Here, the observed density is the deterministic result of the Landauer erasure distribution $L(q,p)$.
+Instead of the Wigner quasi-probability distribution $W(q,p)$, we use Landauer erasure density $L(q,p)$.
 
-When the environment erases a continuous microstate $(q_\mu, p_\mu)$ into the minimal-action state $(q^*, p^*)$, the physical erasure distances are bounded by the reciprocal sub-Planck structures and the classical action: $\epsilon_q = q_\mu - q^*$ and $\epsilon_p = p_\mu - p^*$, such that $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$. The observed macroscopic state $(q,p)$ is the phase-space displacement $(\epsilon_q, \epsilon_p)$ scaled by the quantum capacity $A/h$:
+\subsubsection{Erasure}
+
+$$
+\texttt{erase}(q_\mu, \delta q) \rightarrow (q^*, s_q^*)
+\quad \text{and} \quad
+\texttt{erase}(p_\mu, \delta p) \rightarrow (p^*, s_p^*)
+$$
+
+$$
+K_q = |s_q^*|
+\quad \text{and} \quad
+K_p = |s_p^*|
+$$
+
+Each microstate erases into the minimal-action state $(q_\mu, p_\mu) \rightarrow (q^*, p^*)$: $\epsilon_q = q_\mu - q^*$ and $\epsilon_p = p_\mu - p^*$, such that $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$. The observed macroscopic state $(q,p)$ is the phase-space displacement $(\epsilon_q, \epsilon_p)$ scaled by the quantum capacity $A/h$:
 
 \begin{equation}
 \label{eq:ObservedCoordinates}
 q = \frac{A}{h} \epsilon_q \quad \text{and} \quad p = \frac{A}{h} \epsilon_p
 \end{equation}
 
-Let $N$ be the total ensemble of observed microstates. The Landauer erasure distribution $L(q,p)$ counts the exact number of microstates deterministically erased into each observed phase-space coordinate via the indicator function $\mathbb{I}$:
-
 \begin{equation}
 \label{eq:JointErasure}
 L(q,p) = \sum_{\mu=1}^{N} \mathbb{I}\left( \frac{A}{h} \epsilon_q = q \right) \mathbb{I}\left( \frac{A}{h} \epsilon_p = p \right)
 \end{equation}
-
-In standard phase-space mechanics, the observable marginal densities are obtained by integrating the Wigner function over the conjugate variable. In our deterministic framework, the discrete state counts $N(q)$ and $N(p)$ emerge naturally by summing the Landauer erasure distribution $L(q,p)$ over the conjugate observables:
 
 \begin{equation}
 \label{eq:Marginals}
@@ -152,10 +175,6 @@ N(q) = \sum_{p} L(q,p)
 \quad \text{and} \quad
 N(p) = \sum_{q} L(q,p)
 \end{equation}
-
-These discrete marginals recover the physical structure of the expected quantum densities strictly through the thermodynamic coarse-graining of the classical continuum (see Fig.~\ref{fig:harmonic_oscillator}).
-
-
 
 \subsection{The Relationship Between Bits and Resolving Power}
 
