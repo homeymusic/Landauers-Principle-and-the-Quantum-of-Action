@@ -45,25 +45,7 @@ Quantum microstates are operationally indistinguishable inside Planck's quantum 
 
 \maketitle
 
-\subsection{Erasure Action}
-
-\begin{equation}
-\label{eq:ErasureActionDefinition}
-\text{Erasure Action} = K E_L \tau
-\end{equation}
-
-
-\begin{equation}
-\label{eq:SimpleLanguageHero}
-\text{Erasure Action} \le \text{Classical Action}
-\end{equation}
-
-\begin{equation}
-\label{eq:Hero}
-K E_L \tau \le A
-\end{equation}
-
-\subsection{The Quantum Blob}
+\subsection{De Gosson: The Quantum Blob}
 
 \begin{equation}
 \label{eq:HeisenbergVariance}
@@ -90,11 +72,11 @@ A_{\text{blob}} = 2\pi \left( \frac{\hbar}{2} \right) = \frac{h}{2}
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-\caption{\textbf{Information erasure inside the quantum of action} (schematic). Boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A$ in phase space. The reciprocal relations $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from each microstate $(q_\mu, p_\mu)$ to the minimal-action state $(q_B,p_B)$ of the blobs. The erasure follows the minimal-action path with binary encoding $s^*$ whose bit count is the Kolmogorov complexity $K = |s^*|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)$.}
+\caption{\textbf{Information erasure inside the quantum of action} (schematic). Boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A$ in phase space. The reciprocal relations $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from each microstate $(q_\mu, p_\mu)$ to the minimal-action state $(q_b,p_b)$ of the blobs. The erasure follows the minimal-action path with binary encoding $s^*$ whose bit count is the Kolmogorov complexity $K = |s^*|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)$.}
 \label{fig:erase_schematic}
 \end{figure}
 
-\subsection{One Blob or Two?}
+\subsection{Zurek: One Blob or Two?}
 
 Zurek \cite{Zurek2001} demonstrated that a quantum state constrained by the classical action boundaries $\Delta q$ and $\Delta p$ develops sub-Planck structures defined by the reciprocal limits:
 
@@ -122,7 +104,64 @@ Because both areas are required to bound the space, the total quantum of action 
 h = \pi \delta q \Delta p + \pi \Delta q \delta p
 \end{equation}
 
-Planck demonstrated that a classical phase space of area $A$ has a capacity of $N = A/h$ discrete quanta. Scaling the local quantum boundaries ($\delta q, \delta p$) by this macroscopic capacity, we construct the upper limit of the Erasure Action:
+\subsection{Landauer: Information Erasure}
+
+\begin{equation}
+\label{eq:LandauerErasureEnergy}
+E_L = k_B T \ln{2}
+\end{equation}
+
+\begin{equation}
+\label{eq:LandauerErasure1Bit}
+E_{L,K=1} = k_B T \ln{2}
+\end{equation}
+
+\begin{equation}
+\label{eq:TotalLandauerErasureEnergy}
+E_L = K k_B T \ln{2}
+\end{equation}
+
+\subsection{Margolus-Levitin: Erasure Action}
+
+To express this thermodynamic limit as a phase-space volume, it is dimensionally necessary to introduce a characteristic erasure time, $\tau$:
+
+\begin{equation}
+\label{eq:ErasureActionDefinition}
+\text{Erasure Action} = K E_L \tau
+\end{equation}
+
+We validate this definition by applying it to the minimal quantum phase space (a de Gosson blob), which is bounded by a minimum action of $h/2$. If this fundamental space is saturated by one position bit and one momentum bit ($K=2$), the minimal erasure action is:
+
+\begin{equation}
+\label{eq:MinimalErasureAction}
+2 E_L \tau = \frac{h}{2}
+\end{equation}
+
+Solving for $\tau$ exactly recovers the Margolus-Levitin limit for the minimum time to evolve to an orthogonal state ($\tau_\perp$):
+
+\begin{equation}
+\label{eq:MLErasureTime}
+\tau = \frac{h}{4 E_L} = \tau_\perp
+\end{equation}
+
+This demonstrates that the Margolus-Levitin switching time naturally emerges as the limiting quantum case of a generalized thermodynamic erasure action.
+
+
+\subsection{Erasure Action and Classical Action}
+
+\begin{equation}
+\label{eq:ErasureAndClassicalActionPlain}
+\text{Erasure Action} \le \text{Classical Action}
+\end{equation}
+
+\begin{equation}
+\label{eq:ErasureAndClassicalAction}
+K E_L \tau \le A
+\end{equation}
+
+\subsection{Planck: Quantum Capacity}
+
+Planck demonstrated that a classical phase space of area $A$ has a capacity of $\Gamma = A/h$ quanta. Scaling the local quantum boundaries ($\delta q, \delta p$) by this macroscopic capacity, we construct the upper limit of the Erasure Action:
 
 \begin{equation}
 \label{eq:GeometricActionLimit}
@@ -134,23 +173,6 @@ Because the minimal-action erasure path from a microstate to its target coordina
 \begin{equation}
 \label{eq:ExactGeometricAction}
 K E_L \tau = \frac{A}{h} (\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)
-\end{equation}
-
-Because Zurek's reciprocal limits established $\pi \Delta p = \frac{h}{2\delta q}$ and $\pi \Delta q = \frac{h}{2\delta p}$:
-
-\begin{equation}
-\label{eq:DimensionlessSubstitution}
-K E_L \tau = \frac{A}{h} \left( |\epsilon_q| \frac{h}{2\delta q} + |\epsilon_p| \frac{h}{2\delta p} \right) = \frac{A}{2} \left( \frac{|\epsilon_q|}{\delta q} + \frac{|\epsilon_p|}{\delta p} \right)
-\end{equation}
-
-\begin{equation}
-\label{eq:Saturated}
-K E_L \tau = \frac{A}{2} \left( \frac{\delta q}{\delta q} + \frac{\delta p}{\delta p} \right) \implies K E_L \tau \le \frac{A}{2} (1+1)
-\end{equation}
-
-\begin{equation}
-\label{eq:HeroDerivation}
-K E_L \tau \le A
 \end{equation}
 
 \subsection{Quantum Density from Erasure}
@@ -176,10 +198,12 @@ N(q) = \sum_{p} L(q,p)
 N(p) = \sum_{q} L(q,p)
 \end{equation}
 
+\subsection{Encoding and Erasure of Quantum States}
+
 $$
-\texttt{encode}(q_B, \delta q) \rightarrow (q_\mu, s_q)
+\texttt{encode}(q_b, \delta q) \rightarrow (q_\mu, s_q)
 \quad \text{and} \quad
-\texttt{encode}(p_B, \delta p) \rightarrow (p_\mu, s_p)
+\texttt{encode}(p_b, \delta p) \rightarrow (p_\mu, s_p)
 $$
 
 $$
@@ -201,7 +225,7 @@ $$
 \texttt{erase}(s_p^*) \rightarrow K_p E_L \tau
 $$
 
-Each microstate erases into the minimal-action state $(q_\mu, p_\mu) \rightarrow (q_B, p_B)$: $\epsilon_q = q_\mu - q_B$ and $\epsilon_p = p_\mu - p_B$, such that $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$. The observed macroscopic state $(q,p)$ is the phase-space displacement $(\epsilon_q, \epsilon_p)$ scaled by the quantum capacity $A/h$:
+Each microstate erases into the minimal-action state $(q_\mu, p_\mu) \rightarrow (q_b, p_b)$: $\epsilon_q = q_\mu - q_b$ and $\epsilon_p = p_\mu - p_b$, such that $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$. The observed macroscopic state $(q,p)$ is the phase-space displacement $(\epsilon_q, \epsilon_p)$ scaled by the quantum capacity $A/h$:
 
 \begin{equation}
 \label{eq:ObservedCoordinates}
@@ -289,14 +313,14 @@ K_p
 Let the generic variable $x \in \{q, p\}$ denote any phase-space component.
 
 \begin{algorithmic}[1]
-\Function{ENCODE}{$x_B, \delta x$}
+\Function{ENCODE}{$x_b, \delta x$}
     \State $\text{left} \gets (-1, 0)$
     \State $\text{num} \gets 0, \quad \text{den} \gets 1$
     \State $x_\mu \gets \text{num} / \text{den}$
     \State $\text{right} \gets (1, 0)$
     \State $s_x \gets \text{``''}$
-    \While{$|x_\mu - x_B| > \delta x$}
-        \If{$x_\mu < x_B$} 
+    \While{$|x_\mu - x_b| > \delta x$}
+        \If{$x_\mu < x_b$} 
             \State $\text{left} \gets (\text{num}, \text{den})$
             \State $s_x \gets s_x + \text{``1''}$
         \Else 
@@ -307,7 +331,7 @@ Let the generic variable $x \in \{q, p\}$ denote any phase-space component.
         \State $\text{den} \gets \text{left}_{\text{den}} + \text{right}_{\text{den}}$
         \State $x_\mu \gets \text{num} / \text{den}$
     \EndWhile
-    \State $\epsilon_x \gets x_\mu - x_B$
+    \State $\epsilon_x \gets x_\mu - x_b$
     \State \Return $\epsilon_x, x_\mu, s_x$
 \EndFunction
 \end{algorithmic}
