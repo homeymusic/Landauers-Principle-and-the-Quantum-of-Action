@@ -153,18 +153,6 @@ K E_L \tau = \frac{A}{2} \left( \frac{\delta q}{\delta q} + \frac{\delta p}{\del
 K E_L \tau \le A
 \end{equation}
 
-\subsection{Erasure Action in Phase Space}
-
-\begin{equation}
-\label{eq:SimpleLanguagePhaseSpaceHero}
-\text{Erasure Action} \le (\text{Quantum Capacity} \times \text{Pair of Blobs})
-\end{equation}
-
-\begin{equation}
-\label{eq:HeroPhaseSpace}
-(K_q + K_p) E_L \tau \le \frac{A}{h} (\pi \delta q \Delta p + \pi \Delta q \delta p)
-\end{equation}
-
 \subsection{Quantum Density from Erasure}
 
 \begin{figure}[t!]
@@ -200,10 +188,17 @@ s_q^* = \operatorname{reverse}(\overline{s_q})
 s_p^* = \operatorname{reverse}(\overline{s_p})
 $$
 
+
 $$
 K_q = |s_q^*|
 \quad \text{and} \quad
 K_p = |s_p^*|
+$$
+
+$$
+\texttt{erase}(s_q^*) \rightarrow K_q E_L \tau
+\quad \text{and} \quad
+\texttt{erase}(s_p^*) \rightarrow K_p E_L \tau
 $$
 
 Each microstate erases into the minimal-action state $(q_\mu, p_\mu) \rightarrow (q_B, p_B)$: $\epsilon_q = q_\mu - q_B$ and $\epsilon_p = p_\mu - p_B$, such that $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$. The observed macroscopic state $(q,p)$ is the phase-space displacement $(\epsilon_q, \epsilon_p)$ scaled by the quantum capacity $A/h$:
@@ -212,7 +207,6 @@ Each microstate erases into the minimal-action state $(q_\mu, p_\mu) \rightarrow
 \label{eq:ObservedCoordinates}
 q = \frac{A}{h} \epsilon_q \quad \text{and} \quad p = \frac{A}{h} \epsilon_p
 \end{equation}
-
 
 \subsection{Action, Resolution, and Bits}
 
@@ -288,43 +282,6 @@ K_p
 \pi q_0 p_0 \widetilde{\delta q} \widetilde{\Delta p} &= \frac{h}{2} \\
 \widetilde{\delta q} \widetilde{\Delta p} &= 1 \\
 \widetilde{\delta q} &= \frac{1}{\widetilde{\Delta p}}
-\end{align}
-
-\subsection{Dimensionless Erasure Action and the Hero Bound}
-
-Starting from the exact geometric erasure action derived from the cross-conjugate boundaries:
-\begin{equation}
-\label{eq:ExactGeometricAction}
-\text{Erasure Action} = \frac{A}{h} (\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)
-\end{equation}
-
-We recall the areas of Zurek's conjugate quantum blobs (Eq.~\ref{eq:BlobAreas}):
-\begin{equation}
-\pi \delta q \Delta p = \frac{h}{2} \implies \pi \Delta p = \frac{h}{2 \delta q} 
-\end{equation}
-
-\begin{equation}
-\pi \Delta q \delta p = \frac{h}{2} \implies \pi \Delta q = \frac{h}{2 \delta p}
-\end{equation}
-
-
-Substituting these macroscopic bounds into Eq.~\ref{eq:ExactGeometricAction} cleanly factors out Planck's constant:
-\begin{align}
-\text{Erasure Action} &= \frac{A}{h} \left( |\epsilon_q| \frac{h}{2\delta q} + |\epsilon_p| \frac{h}{2\delta p} \right) \nonumber \\
-&= \frac{A}{2} \left( \frac{|\epsilon_q|}{\delta q} + \frac{|\epsilon_p|}{\delta p} \right)
-\label{eq:SimplifiedErasureAction}
-\end{align}
-
-By defining the dimensionless relative quantization errors $\tilde{\epsilon}_q = |\epsilon_q|/\delta q$ and $\tilde{\epsilon}_p = |\epsilon_p|/\delta p$, the equation simplifies to a strictly scale-independent form:
-\begin{equation}
-\label{eq:DimensionlessErasureAction}
-\text{Erasure Action} = \frac{A}{2} (\tilde{\epsilon}_q + \tilde{\epsilon}_p)
-\end{equation}
-
-Because the minimal-action path strictly limits the residual displacement to the bounds of the resolved grid, the relative errors satisfy $\tilde{\epsilon}_q \le 1$ and $\tilde{\epsilon}_p \le 1$. Evaluating the worst-case maximal displacement ($\tilde{\epsilon}_q = \tilde{\epsilon}_p = 1$) analytically recovers the thermodynamic bound defined in Eq.~\ref{eq:Hero}:
-\begin{align}
-\text{Erasure Action} &\le \frac{A}{2} (1 + 1) \nonumber \\
-K E_L \tau &\le A
 \end{align}
 
 \section{Numerical Simulations}
