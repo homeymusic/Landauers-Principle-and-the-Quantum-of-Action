@@ -206,11 +206,10 @@ $$
 $$
 
 $$
-s_q^* = \overline{s_q}^{\mathsf{R}}
+s_q^* = \operatorname{reverse}(\overline{s_q})
 \quad \text{and} \quad
-s_p^* = \overline{s_p}^{\mathsf{R}}
+s_p^* = \operatorname{reverse}(\overline{s_p})
 $$
-
 
 $$
 K_q = |s_q^*|
@@ -339,17 +338,16 @@ Because the minimal-action path strictly limits the residual displacement to the
 K E_L \tau &\le A
 \end{align}
 
-
 \section{Numerical Simulations}
 
 Let the generic variable $x \in \{q, p\}$ denote any phase-space component.
 
 \begin{algorithmic}[1]
-\Function{encode}{$x_B, \delta x$}
+\Function{ENCODE}{$x_B, \delta x$}
     \State $\text{left} \gets (-1, 0)$
     \State $\text{num} \gets 0, \quad \text{den} \gets 1$
-    \State $\text{right} \gets (1, 0)$
     \State $x_\mu \gets \text{num} / \text{den}$
+    \State $\text{right} \gets (1, 0)$
     \State $s_x \gets \text{``''}$
     \While{$|x_\mu - x_B| > \delta x$}
         \If{$x_\mu < x_B$} 
@@ -368,67 +366,16 @@ Let the generic variable $x \in \{q, p\}$ denote any phase-space component.
 \EndFunction
 \end{algorithmic}
 
-The binary sequence from the encoder $s_x$ is passed into the erasure function.
+We invert and reverse the encoding sequence $s_x$ to form the minimal erasure path, $s_x^* = \operatorname{reverse}(\overline{s_x})$, which is irreversibly destroyed.
 
 \begin{algorithmic}[1]
-\Function{erase}{$s_x$}
-    \State $s_x^* \gets \text{``''}$
-    \State $K \gets |s_x|$
-    \For{$i \gets K \textbf{ down to } 1$}
-        \If{$s_x[i] == \text{`1'}$} 
-            \State $s_x^* \gets s_x^* + \text{`0'}$
-        \Else 
-            \State $s_x^* \gets s_x^* + \text{`1'}$
-        \EndIf
-        \State \text{Dissipate Landauer heat} $k_B T \ln{2}$ \text{over time} $\tau$
-    \EndFor
-    \State \Return $s_x^*$
-\EndFunction
-\end{algorithmic}
-
-\section{Numerical Simulations}
-
-Let the generic variable $x \in \{q, p\}$ denote any phase-space component.
-
-\begin{algorithmic}[1]
-\Function{encode}{$x_B, \delta x$}
-    \State $\text{left} \gets (-1, 0)$
-    \State $\text{num} \gets 0, \quad \text{den} \gets 1$
-    \State $\text{right} \gets (1, 0)$
-    \State $x_\mu \gets \text{num} / \text{den}$
-    \State $s_x \gets \text{``''}$
-    \While{$|x_\mu - x_B| > \delta x$}
-        \If{$x_\mu < x_B$} 
-            \State $\text{left} \gets (\text{num}, \text{den})$
-            \State $s_x \gets s_x + \text{``1''}$
-        \Else 
-            \State $\text{right} \gets (\text{num}, \text{den})$
-            \State $s_x \gets s_x + \text{``0''}$
-        \EndIf
-        \State $\text{num} \gets \text{left}_{num} + \text{right}_{num}$
-        \State $\text{den} \gets \text{left}_{den} + \text{right}_{den}$
-        \State $x_\mu \gets \text{num} / \text{den}$
+\Function{ERASE}{$s_x^*$}
+    \State $K_x \gets |s_x^*|$
+    \While{$K_x > 0$}
+        \State \Call{ShiftLeft}{$s_x^*$} 
+        \Statex \Comment{\text{Dissipate Landauer heat} $k_B T \ln{2}$ \text{over time} $\tau$}
+        \State $K_x \gets |s_x^*|$
     \EndWhile
-    \State $\epsilon_x \gets x_\mu - x_B$
-    \State \Return $\epsilon_x, x_\mu, s_x$
-\EndFunction
-\end{algorithmic}
-
-The binary sequence from the encoder $s_x$ is passed into the erasue function.
-
-\begin{algorithmic}[1]
-\Function{erase}{$s_x$}
-    \State $s_x^* \gets \text{``''}$
-    \State $K \gets |s_x|$
-    \For{$i \gets K \textbf{ down to } 1$}
-        \If{$s_x[i] == \text{`1'}$} 
-            \State $s_x^* \gets s_x^* + \text{`0'}$
-        \Else 
-            \State $s_x^* \gets s_x^* + \text{`1'}$
-        \EndIf
-        \State \text{Dissipate } $E_L \tau$ \text{Landauer action} 
-    \EndFor
-    \State \Return $s_x^*$
 \EndFunction
 \end{algorithmic}
 
