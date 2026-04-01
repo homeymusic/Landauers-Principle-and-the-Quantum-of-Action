@@ -34,7 +34,7 @@
 \title{Information Erasure Inside the Quantum of Action}
 
 \begin{abstract}
-Quantum microstates are operationally indistinguishable inside Planck's quantum of action. We show that Landauer's principle compels the thermodynamic erasure of the minimal-action microstate, yielding the observed classical state. This erasure granulates the continuum, selecting the discrete configurations of quantum mechanics at low action and smooth classical trajectories at high action.
+Quantum microstates are operationally indistinguishable inside Planck's quantum of action. We show that Landauer's principle compels the erasure of the minimal-action microstate, yielding the observed state. This erasure granulates the continuum, smoothly resolving the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -174,7 +174,8 @@ Planck demonstrated \cite{Planck1906} that a classical phase space of area $A$ h
 (K_q + K_p) E_L \tau \le \frac{A}{h} (\pi \delta q  \Delta p + \pi \Delta q \delta p)
 \end{equation}
 
-Because the minimal-action erasure paths from each microstate to the minimal-action state are bounded by $|\epsilon_q| \le \delta q$ and $|\epsilon_p| \le \delta p$, the erasure action is:
+
+Because the erasure paths from the minimal-action microstate $(q_\mu^*, p_\mu^*)$ to the blob centers $(q_b, p_b)$ are bounded by $|\epsilon_q| \le \delta q$ and $|\epsilon_p| \le \delta p$, the erasure action is:
 
 \begin{equation}
 \label{eq:ExactGeometricAction}
@@ -240,11 +241,11 @@ N(p) = \sum_{q} L(q,p)
 
 \section{Erasure on a Universal Computer}
 
-Let $U$ be a Universal Reversible Turing Machine. For any phase-space coordinate, $x \in \{q, p\}$, a computable encoding function, $\mathcal{E}_U$, encodes the minimal-action microstate $x_\mu$ inside the classical action boundary $\delta x$ centered on the blob component $x_b$ as a binary program string $s_x$:
+Let $U$ be a Universal Reversible Turing Machine. For any phase-space coordinate, $x \in \{q, p\}$, a computable encoding function, $\mathcal{E}_U$, encodes the minimal-action microstate $x_\mu^*$ inside the classical action boundary $\delta x$ centered on the blob component $x_b$ as a binary program string $s_x$:
 
 \begin{equation}
 \label{eq:EncoderFunction}
-\mathcal{E}_U(x_b, \delta x) \rightarrow (x_\mu, s_x)
+\mathcal{E}_U(x_b, \delta x) \rightarrow (x_\mu^*, s_x)
 \end{equation}
 
 Following Bennett's protocol for logical reversibility \cite{Bennett1973}, we invert and reverse $s_x$ to form the minimal uncomputation path:
@@ -261,7 +262,7 @@ Algorithmic erasure of $s_x^*$, where $K_x=|s_x^*|$, incurs Landauer's thermodyn
 \text{ERASE}(s_x^*) \rightarrow K_x E_L \tau
 \end{equation}
 
-Each microstate $(q_\mu, p_\mu)$ uncomputes to $(q_b, p_b)$, creating a displacement in phase space $\epsilon_q = q_\mu - q_b$ and $\epsilon_p = p_\mu - p_b$. The observed macroscopic coordinates $(q,p)$ are those displacements $(\epsilon_q,\epsilon_p)$ scaled by Planck's quantum capacity $A/h$:
+Each minimal-action microstate $(q_\mu^*, p_\mu^*)$ uncomputes to $(q_b, p_b)$, creating a displacement in phase space $\epsilon_q = q_\mu^* - q_b$ and $\epsilon_p = p_\mu^* - p_b$. The observed macroscopic coordinates $(q,p)$ are those displacements $(\epsilon_q,\epsilon_p)$ scaled by Planck's quantum capacity $A/h$:
 
 \begin{equation}
 \label{eq:ObservedCoordinates}
@@ -270,7 +271,7 @@ q = \frac{A}{h} \epsilon_q \quad \text{and} \quad p = \frac{A}{h} \epsilon_p
 
 \subsection{Time Evolution and Decoherence}
 
-Uncomputing a microstate on $U$ is a physical process that unfolds over time. As the system clears bits from the tape, the microstate steps closer to the minimal-action state, physically shrinking the offsets $\epsilon_q$ and $\epsilon_p$ toward zero. Because the macroscopic coordinates scale directly with these microscopic offsets, they track this continuous erasure process:
+Uncomputing the minimal-action microstate on $U$ is a physical process that unfolds over time. As the system clears bits from the tape, the microstate steps closer to the classical target, physically shrinking the offsets $\epsilon_q$ and $\epsilon_p$ toward zero. Because the macroscopic coordinates scale directly with these microscopic offsets, they track this continuous erasure process:
 
 \begin{equation}
 \label{eq:TimeEvolutionCoordinates}
@@ -296,11 +297,11 @@ This denominator sets the physical clock. A system maintains its quantum behavio
 \Function{$\mathcal{E}_U$}{$x_b, \delta x$}
     \State $\text{left} \gets (-1, 0)$
     \State $\text{num} \gets 0, \quad \text{den} \gets 1$
-    \State $x_\mu \gets \text{num} / \text{den}$
+    \State $x_\mu^* \gets \text{num} / \text{den}$
     \State $\text{right} \gets (1, 0)$
     \State $s_x \gets \text{``''}$
-    \While{$|x_\mu - x_b| > \delta x$}
-        \If{$x_\mu < x_b$} 
+    \While{$|x_\mu^* - x_b| > \delta x$}
+        \If{$x_\mu^* < x_b$} 
             \State $\text{left} \gets (\text{num}, \text{den})$
             \State $s_x \gets s_x + \text{``1''}$
         \Else 
@@ -309,9 +310,9 @@ This denominator sets the physical clock. A system maintains its quantum behavio
         \EndIf
         \State $\text{num} \gets \text{left}_{\text{num}} + \text{right}_{\text{num}}$
         \State $\text{den} \gets \text{left}_{\text{den}} + \text{right}_{\text{den}}$
-        \State $x_\mu \gets \text{num} / \text{den}$
+        \State $x_\mu^* \gets \text{num} / \text{den}$
     \EndWhile
-    \State \Return $x_\mu, s_x$
+    \State \Return $x_\mu^*, s_x$
 \EndFunction
 \end{algorithmic}
 
