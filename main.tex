@@ -86,44 +86,6 @@ The total energy dissipated scales with algorithmic information content, defined
 \text{Total Landauer Cost} = K k_B T \ln{2}
 \end{equation}
 
-\section{Margolus-Levitin: Erasure Action}
-
-To constrain Landauer erasure by the classical action, it is dimensionally necessary to introduce a characteristic erasure time, $\tau$:
-
-\begin{equation}
-\label{eq:ErasureActionDefinition}
-\text{Erasure Action} = K E_L \tau
-\end{equation}
-
-We validate this definition at the limit of the minimal quantum phase space, where the ground state area is $h/2$. Saturated by one position bit and one momentum bit, $K = K_q + K_p = 2$, the minimal erasure action becomes:
-
-\begin{equation}
-\label{eq:MinimalErasureAction}
-2 E_L \tau = \frac{h}{2}
-\end{equation}
-
-Solving for $\tau$ recovers the Margolus-Levitin limit \cite{MargolusLevitin1998} for the minimum time to evolve to an orthogonal state ($\tau_\perp$):
-
-\begin{equation}
-\label{eq:MLErasureTime}
-\tau_{K=2} = \frac{h}{4 E_L} = \tau_\perp
-\end{equation}
-
-This demonstrates that the Margolus-Levitin minimum orthogonal time corresponds to the maximum erasure time.
-
-\section{Lloyd: Erasure Action and Classical Action}
-
-Lloyd demonstrated that the number of elementary logical operations $N$ a physical system can perform in time $t$ is fundamentally bounded by its total available action, $N \le \frac{2 E t}{\pi \hbar}$ \cite{Lloyd2000}. Applying this limit to the geometry of phase space, the total action required to erase $K$ bits of information cannot exceed the classical action area, $A$:
-
-\begin{equation}
-\label{eq:ErasureAndClassicalActionPlain}
-\text{Erasure Action} \le \text{Classical Action}
-\end{equation}
-
-\begin{equation}
-\label{eq:ErasureAndClassicalAction}
-K E_L \tau \le A
-\end{equation}
 
 \section{De Gosson: The Quantum Blob}
 
@@ -162,6 +124,44 @@ De Gosson bridges this statistical uncertainty with phase-space geometry. By sat
 
 Protected by Gromov's non-squeezing theorem \cite{Gromov1985}, this $h/2$ minimum area is topologically conserved. Compressing the blob along one axis inevitably forces a proportional expansion along its conjugate.
 
+\section{Margolus-Levitin: Erasure Action}
+
+To constrain Landauer erasure by the classical action, it is dimensionally necessary to introduce a characteristic erasure time, $\tau$:
+
+\begin{equation}
+\label{eq:ErasureActionDefinition}
+\text{Erasure Action} = K E_L \tau
+\end{equation}
+
+We validate this definition at the limit of the minimal quantum phase space, where the pair of quantum blobs degenerate into a perfect overlapping circle with area $h/2$. Saturated by one position bit and one momentum bit, $K = K_q + K_p = 2$, the minimal erasure action becomes:
+
+\begin{equation}
+\label{eq:MinimalErasureAction}
+2 E_L \tau = \frac{h}{2}
+\end{equation}
+
+Solving for $\tau$ recovers the Margolus-Levitin limit \cite{MargolusLevitin1998} for the minimum time to evolve to an orthogonal state ($\tau_\perp$):
+
+\begin{equation}
+\label{eq:MLErasureTime}
+\tau_{K=2} = \frac{h}{4 E_L} = \tau_\perp
+\end{equation}
+
+This demonstrates that the Margolus-Levitin minimal orthogonal time corresponds to the maximal erasure time.
+
+\section{Lloyd: Erasure Action and Classical Action}
+
+Lloyd demonstrated that the number of elementary logical operations $N$ a physical system can perform in time $t$ is fundamentally bounded by its total available action, $N \le \frac{2 E t}{\pi \hbar}$ \cite{Lloyd2000}. Applying this limit to the geometry of phase space, the total action required to erase $K$ bits of information cannot exceed the classical action area, $A$:
+
+\begin{equation}
+\label{eq:ErasureAndClassicalActionPlain}
+\text{Erasure Action} \le \text{Classical Action}
+\end{equation}
+
+\begin{equation}
+\label{eq:ErasureAndClassicalAction}
+K E_L \tau \le A
+\end{equation}
 
 \section{Zurek: One Blob or Two?}
 
@@ -207,7 +207,7 @@ Where the erasure paths from the minimal-action microstate $(q_\mu^*, p_\mu^*)$ 
 To understand the physical machinery of Equation~\ref{eq:GeometricActionLimit}, we can isolate the provisioning and expenditure of algorithmic information:
 
 \subsubsection{The Quantum Capacity ($A/h$)} 
-The area of the conjugate blob pair is the quantum of action, $h$. Because this minimal area can only ever fund the minimal bit budget ($K_q = 1, K_p = 1$), the action required to support a classical bit budget ($K \gg 1$) must be provisioned by the classical scale of the system. The multiplier $A/h$ provides this capacity, scaling the quantum of action $h$ up to the classical action necessary to support the total bits in $K$.
+The area of the conjugate blob pair is the quantum of action, $h$. Because each quantum blob $A_b = h/2$ can only ever fund the minimal bit budget ($K_q = 1, K_p = 1$), the action required to support a classical bit budget ($K \gg 1$) must be provisioned by the classical scale of the system. The multiplier $A/h$ provides this capacity, scaling the quantum of action $h$ up to the classical action necessary to support the total bits in $K$.
 
 \subsubsection{The Geometric Squeezing ($h/2$)} 
 When a classical boundary expands (e.g., increasing the classical momentum boundary $\Delta p$), symplectic geometry strictly conserves the area of each de Gosson blob at exactly $h/2$. Because this area cannot grow, the blob must physically compress the squeezed position boundary ($\delta q$) to compensate. 
@@ -237,7 +237,7 @@ When the classical momentum boundary ($\Delta p$) grows, the squeezed position b
 
 \section{Quantum Density from Erasure}
 
-Standard phase-space formulations of quantum mechanics traditionally rely on the Wigner quasi-probability distribution $W(q,p)$ \cite{Wigner1932}. In the context of information erasure, however, we instead introduce the Landauer erasure density $L(q,p)$:
+Standard phase-space formulations of quantum mechanics traditionally employ on the Wigner quasi-probability distribution $W(q,p)$ \cite{Wigner1932}. In the context of information erasure, however, we instead introduce the Landauer erasure density $L(q,p)$:
 
 \begin{equation}
 \label{eq:JointErasure}
