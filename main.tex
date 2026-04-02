@@ -46,7 +46,7 @@ Quantum microstates are operationally indistinguishable inside Planck's quantum 
 
 \section{De Gosson: The Quantum Blob}
 
-Let phase-space coordinates be $(q,p)$, where $q$ is position and $p$ is momentum. According to the Heisenberg uncertainty principle \cite{Heisenberg1927}:
+Phase-space coordinates are $(q,p)$, where $q$ is position and $p$ is momentum. According to the Heisenberg uncertainty principle \cite{Heisenberg1927}:
 
 \begin{equation}
 \label{eq:HeisenbergVariance}
@@ -128,7 +128,7 @@ The total energy dissipated scales with algorithmic information content, defined
 
 \section{Margolus-Levitin: Erasure Action}
 
-To express erasure action as a phase-space volume, it is dimensionally necessary to introduce a characteristic erasure time, $\tau$:
+To constrain Landauer erasure to the classical action, it is dimensionally necessary to introduce a characteristic erasure time, $\tau$:
 
 \begin{equation}
 \label{eq:ErasureActionDefinition}
@@ -149,7 +149,7 @@ Solving for $\tau$ recovers the Margolus-Levitin limit \cite{MargolusLevitin1998
 \tau_{K=2} = \frac{h}{4 E_L} = \tau_\perp
 \end{equation}
 
-This demonstrates that the Margolus-Levitin limit for state evolution corresponds exactly to the maximal erasure time, naturally setting the physical timescale for quantum decoherence.
+This demonstrates that the Margolus-Levitin minimum for state evolution corresponds to the maximum erasure time, naturally setting the physical timescale for quantum decoherence.
 
 \section{Lloyd: Erasure Action and Classical Action}
 
@@ -167,7 +167,7 @@ K E_L \tau \le A
 
 \section{Planck: Quantum Erasure Capacity}
 
-Planck demonstrated \cite{Planck1906} that a classical phase space of area $A$ has a capacity of $A/h$. Expanding the quantum of action $h$ into its pair of quantum blobs (Eq.~\ref{eq:Blobs}), we scale this macroscopic capacity to construct the boundaries of erasure action:
+Planck demonstrated \cite{Planck1906} that a classical phase space of area $A$ has a configuration capacity of $A/h$. Expanding the quantum of action $h$ into its pair of quantum blobs (Eq.~\ref{eq:Blobs}), we scale this macroscopic capacity to construct the boundaries of erasure action:
 
 \begin{equation}
 \label{eq:GeometricActionLimit}
@@ -179,7 +179,7 @@ Because the erasure paths from the minimal-action microstate $(q_\mu^*, p_\mu^*)
 
 \begin{equation}
 \label{eq:ExactGeometricAction}
-(K_q + K_p) E_L \tau = \frac{A}{h} (\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)
+(K_q + K_p) E_L \tau \le \frac{A}{h} (\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)
 \end{equation}
 
 
@@ -188,13 +188,13 @@ Because the erasure paths from the minimal-action microstate $(q_\mu^*, p_\mu^*)
 To understand the physical machinery of Equation~\ref{eq:ExactGeometricAction}, we can isolate how the universe provisions and expends algorithmic information:
 
 \subsubsection{The Macroscopic Capacity ($A/h$)} 
-The area of the conjugate blob pair is strictly the quantum of action, $h$. Because this fundamental space can only ever fund the minimal bit budget ($K_q = 1, K_p = 1$), the action required to support a macroscopic bit budget ($K \gg 1$) must be provisioned by the classical scale of the system. The multiplier $A/h$ provides this capacity, scaling the quantum of action $h$ up to the macroscopic action necessary to support the total bits in $K$.
+The area of the conjugate blob pair is the quantum of action, $h$. Because this minimal area can only ever fund the minimal bit budget ($K_q = 1, K_p = 1$), the action required to support a macroscopic bit budget ($K \gg 1$) must be provisioned by the classical scale of the system. The multiplier $A/h$ provides this capacity, scaling the quantum of action $h$ up to the macroscopic action necessary to support the total bits in $K$.
 
 \subsubsection{The Geometric Squeezing ($h/2$)} 
-When a macroscopic classical boundary expands (e.g., increasing momentum $\Delta p$), symplectic geometry strictly conserves the area of the underlying de Gosson blob at exactly $h/2$. Because this area cannot grow, the blob must physically squeeze Zurek's conjugate quantum uncertainty ($\delta q$) to compensate. 
+When a macroscopic classical boundary expands (e.g., increasing momentum $\Delta p$), symplectic geometry strictly conserves the area of the underlying de Gosson blob at exactly $h/2$. Because this area cannot grow, the blob must physically squeeze Zurek's spatial uncertainty ($\delta q$) to compensate. 
 
 \subsubsection{The Resolving Power ($K$)} 
-This sub-Planck squeezing acts as the resolving power of the phase space. To pinpoint a microstate within increasingly fine spatial crosshairs ($\delta q \to 0$), the universe must expend more algorithmic information ($K_q \to \infty$). Therefore, macroscopic boundaries enforce microscopic resolution, which in turn demands a larger bit budget:
+This sub-Planck squeezing acts as the resolving power of the phase space. To pinpoint a microstate within increasingly fine spatial crosshairs ($\delta q \to 0$, $\delta p \to 0$), the universe must expend more algorithmic information ($K_q \to \infty, K_p \to \infty$). Therefore, macroscopic boundaries enforce microscopic resolution, which in turn demands a larger bit budget:
 
 \begin{equation}
 \label{eq:ResolvingPowerPlain}
@@ -239,7 +239,7 @@ N(p) = \sum_{q} L(q,p)
 \label{fig:harmonic_oscillator}
 \end{figure}
 
-\section{Erasure on a Universal Computer}
+\section{Bennett: Universal Eraser}
 
 Let $U$ be a Universal Reversible Turing Machine. For any phase-space coordinate, $x \in \{q, p\}$, a computable encoding function, $\mathcal{E}_U$, encodes the minimal-action microstate $x_\mu^*$ inside the classical action boundary $\delta x$ centered on the blob component $x_b$ as a binary program string $s_x$:
 
@@ -289,6 +289,33 @@ By isolating time from the erasure action boundary and expanding Landauer's limi
 
 This denominator sets the physical clock. A system maintains its quantum behavior if it remains small ($K \to 2$) and cold ($T \to 0$). If the state requires a massive bit budget ($K \gg 1$) or operates at a high temperature ($T \gg 0$), the denominator grows rapidly. The erasure time drops to zero, and the system becomes entirely classical.
 
+\section{A Geometric Uncertainty Principle}
+
+Zurek's demonstrated that quantum interference creates rectangular sub-Planck tiles of area $a = \delta q \delta p$ \cite{Zurek2001}. Generalizing these rectangular bounds to symplectic geometry, we bound this uncertainty within an ellipsoid. 
+
+In the context of phase-space polar duality \cite{deGosson2022}, the unique maximum-volume ellipsoid inscribed within a convex body is the Fritz John ellipsoid \cite{John1948}. De Gosson's John ellipsoid is saturated at the half quantum of action ($h/2$), erasure within Zurek's sub-Planck interference forces this inner ellipsoid to be smaller:
+
+\begin{equation}
+\label{eq:SubPlanckJohnEllipsoid}
+\pi \delta q \delta p \le \frac{h}{2}
+\end{equation}
+
+The area of this Fritz John ellipsoid establishes a geometric uncertainty relation bounded by the classical action:
+
+\begin{equation}
+\label{eq:GeometricUncertaintyPrinciplePlainLanguage}
+\text{Uncertainty} \propto \frac{1}{\text{Classical Action}}
+\end{equation}
+
+The area of the John ellipse is $\pi \delta q \delta p$ giving us a geometric uncertainty principle:
+
+\begin{equation}
+\label{eq:ZurekUncertaintyPrinciple}
+\delta q \delta p = \frac{\hbar^2}{\Delta q \Delta p}.
+\end{equation}
+
+This approach resolves {S}chr{\"{o}}dinger's cat paradox \cite{Schrodinger1980Trimmer}: macroscopic action squeezes quantum uncertainty into fine crosshairs in phase-space, enforcing microscopic precision and naturally restoring the correspondence principle.
+
 \section{Numerical Simulations}
 
  To simulate the physical encoding function $\mathcal{E}_U$, we leverage modified sequences \cite{Aiylam2013} to extend the standard Stern-Brocot tree \cite{ConcreteMath} across the entire real line, $\mathbb{R}$, by initializing the search bounds at $\pm \infty$:
@@ -330,31 +357,6 @@ The minimal program $s_x^*$ is irreversibly destroyed, clearing the tape on $U$.
     \EndWhile
 \EndFunction
 \end{algorithmic}
-
-\section{A Geometric Uncertainty Principle}
-
-Zurek's Wigner compass demonstrates that quantum interference creates rectangular sub-Planck tiles of area $a = \delta q \delta p$ \cite{Zurek2001}. Generalizing these rectangular bounds to symplectic geometry, we bound this uncertainty within an ellipsoid. 
-
-In the context of phase-space polar duality \cite{deGosson2022}, the unique maximum-volume ellipsoid inscribed within a convex body is the Fritz John ellipsoid \cite{John1948}. While de Gosson's John ellipsoid is saturated at the quantum of action ($h/2$), Zurek's sub-Planck interference forces this inner ellipsoid to be strictly smaller:
-
-\begin{equation}
-\label{eq:SubPlanckJohnEllipsoid}
-\pi \delta q \delta p \le \frac{h}{2}
-\end{equation}
-
-The area of this Fritz John ellipsoid establishes a geometric uncertainty relation bounded by the classical action:
-
-\begin{equation}
-\label{eq:GeometricUncertaintyPrinciplePlainLanguage}
-\text{Uncertainty} \propto \frac{1}{\text{Classical Action}}
-\end{equation}
-
-\begin{equation}
-\label{eq:ZurekUncertaintyPrinciple}
-\delta q \delta p = \frac{\hbar^2}{\Delta q \Delta p}
-\end{equation}
-
-This approach resolves {S}chr{\"{o}}dinger's cat paradox \cite{Schrodinger1980Trimmer}: macroscopic action squeezes quantum uncertainty into fine phase-space crosshairs, enforcing microscopic precision and naturally restoring the correspondence principle.
 
 \bibliography{main} 
 \end{document}
