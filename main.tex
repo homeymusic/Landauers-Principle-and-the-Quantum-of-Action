@@ -34,7 +34,7 @@
 \title{Information Erasure Inside the Quantum of Action}
 
 \begin{abstract}
-Quantum microstates are operationally indistinguishable inside Planck's quantum of action. We show that among those microstates, Landauer's principle compels the selection of the microstate requiring minimal erasure action. This erasure granulates the continuum. It resolves the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
+Quantum microstates are operationally indistinguishable inside Planck's quantum of action. We show that among these infinite possible microstates, Landauer's principle compels the selection of the microstate requiring the least erasure action. This erasure granulates the continuum. It resolves the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -46,7 +46,7 @@ Quantum microstates are operationally indistinguishable inside Planck's quantum 
 
 \section{Introduction}
 
-To understand the mechanics of this model, it is helpful to briefly set aside the traditional, statistical view of the Heisenberg uncertainty principle. Instead, we return to the absolute foundation: Planck's quantum of action, $h$. 
+To understand the mechanics of this model, it is helpful to briefly set aside the traditional, statistical view of the Heisenberg uncertainty principle. Instead, we return to the foundation: Planck's quantum of action, $h$. 
 
 Imagine this fundamental unit not as a statistical blur, but as a physical blob in phase space. The environment can stretch and squeeze this blob into various shapes, but its total area is strictly conserved---it is always exactly $h$. 
 
@@ -59,16 +59,15 @@ This is where the math collides with physical reality. Because the universe comp
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-\caption{\textbf{Information erasure inside the quantum of action} (schematic). The classical action boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A$ in phase space. The squeezed boundaries $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. These squeezed boundaries enclose an interior ellipse with area $\pi \delta q \delta p = \frac{\pi \hbar^2}{\Delta q \Delta p}$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from the minimal-action microstate $(q_\mu^*, p_\mu^*)$ to the blob centers $(q_b,p_b)$. The erasure follows the minimal-action path with binary encoding $s^*$ whose bit count is the Kolmogorov complexity $K = |s^*|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)$.}
+\caption{\textbf{Information erasure inside the quantum of action} (schematic). The classical action boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A = \pi \Delta q \Delta p \ge h/2$ in phase space. The squeezed boundaries $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. These squeezed boundaries enclose an interior ellipse with area $\pi \delta q \delta p = \frac{\pi \hbar^2}{\Delta q \Delta p}$. The values $\epsilon_q$ and $\epsilon_p$ are the erasure distances from the selected microstate $(q_\mu, p_\mu)$ to the blob centers $(q_b,p_b)$. The erasure follows the minimal-action path with binary encoding $s^*$ whose bit count is the Kolmogorov complexity $K = |s^*|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)$.}
 \label{fig:erase_schematic}
 \end{figure}
 
-Faced with a finite action budget, the universe must truncate. But how is the system allowed to simply swap an exact coordinate for an approximation? Because inside the boundaries of the fundamental quantum blob, all microstates are operationally indistinguishable. No physical measurement can tell them apart. This establishes a fundamental many-to-one mapping: an infinite pool of mathematically distinct coordinates within the blob all share the same physical identity. Since any coordinate in this pool is physically valid, the universe selects the single minimal-action state that fits within its budget. 
+Faced with a finite action budget, the universe must truncate. But how is the system allowed to simply swap an exact coordinate for an approximation? Because inside the quantum of action, all microstates are operationally indistinguishable. No physical measurement can tell them apart. This establishes a fundamental many-to-one mapping: an infinite pool of mathematically distinct coordinates within the blob all share the same physical identity. Since any coordinate in this pool is physically valid, the universe selects the microstate that requires the least action to erase.
 
 Instead of the infinitely complex golden ratio, it settles for a nearby simple fraction, like $5/3$. Clearing the excess algorithmic information to reach this low-complexity state is an irreversible thermodynamic process. Erasing this short binary program costs a tiny, manageable amount of physical action that safely fits within the system's classical limits. 
 
-In this letter, we show that this thermodynamic truncation is the engine of quantum mechanics. Because the universe can only afford finite bit strings, many infinitely precise coordinates are naturally forced to irreversibly erase to one nearby minimal-action state. This mandatory Landauer process granulates the continuum. It is this thermodynamic necessity to erase information on a strict budget that pixelates phase space, resolving the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
-
+Below, we show that this thermodynamic truncation is the engine of quantum mechanics. Because the universe can only afford finite bit strings, an infinity of precise coordinates is forced to irreversibly erase to a single nearby state. This mandatory Landauer process granulates the continuum. The thermodynamic necessity to expend the least erasure action pixelates phase space, resolving the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
 
 \section{Landauer: Information Erasure}
 
@@ -200,7 +199,7 @@ Planck demonstrated \cite{Planck1906} that a classical phase space of area $A$ h
 (K_q + K_p) E_L \tau \le \frac{A}{h} (\pi \delta q  \Delta p + \pi \Delta q \delta p)
 \end{equation}
 
-Where the erasure paths from the minimal-action microstate $(q_\mu^*, p_\mu^*)$ to the blob centers $(q_b, p_b)$ are bounded by $|\epsilon_q| \le \delta q$ and $|\epsilon_p| \le \delta p$.
+Where the erasure paths from the selected microstate $(q_\mu, p_\mu)$ to the blob centers $(q_b, p_b)$ are bounded by $|\epsilon_q| \le \delta q$ and $|\epsilon_p| \le \delta p$.
 
 \subsection{Anatomy of the Erasure Action}
 
@@ -262,11 +261,11 @@ N(p) = \sum_{q} L(q,p)
 
 \section{Bennett: Universal Eraser}
 
-Let $U$ be a Universal Reversible Turing Machine. For any phase-space coordinate, $x \in \{q, p\}$, a computable encoding function extracts the minimal-action microstate $x_\mu^*$ inside the squeezed boundary $\delta x$ centered on the blob coordinate $x_b$, yielding a binary program string $s_x$:
+Let $U$ be a Universal Reversible Turing Machine. For any phase-space coordinate, $x \in \{q, p\}$, a computable encoding function extracts the selected microstate $x_\mu$ inside the squeezed boundary $\delta x$ centered on the blob coordinate $x_b$, yielding a binary program string $s_x$:
 
 \begin{equation}
 \label{eq:EncoderFunction}
-(x_\mu^*, s_x) = \operatorname{ENCODE}(x_b, \delta x)
+(x_\mu, s_x) = \operatorname{ENCODE}(x_b, \delta x)
 \end{equation}
 
 Following Bennett's protocol for logical reversibility \cite{Bennett1973}, we take the bitwise complement $\bar{s}_x$ and reverse the string to form the minimal uncomputation path, with algorithmic complexity $K_x = |s_x^*| = |s_x|$:
@@ -280,10 +279,10 @@ Algorithmic erasure of this string physically uncomputes the microstate back to 
 
 \begin{equation}
 \label{eq:ErasureFunction}
-\epsilon_x = \operatorname{ERASE}(s_x^*, x_\mu^*, x_b), \quad \text{expends} \quad \Delta A_L = K_x E_L \tau
+\epsilon_x = \operatorname{ERASE}(s_x^*, x_\mu, x_b), \quad \text{expends} \quad \Delta A_L = K_x E_L \tau
 \end{equation}
 
-As each minimal-action microstate $(q_\mu^*, p_\mu^*)$ uncomputes to its respective center $(q_b, p_b)$, it generates the conjugate displacements $\epsilon_q$ and $\epsilon_p$. The observed classical coordinates $(q,p)$ are these displacements scaled by Planck's classical capacity $A/h$:
+As each selected microstate $(q_\mu, p_\mu)$ uncomputes to its respective center $(q_b, p_b)$, it generates the conjugate displacements $\epsilon_q$ and $\epsilon_p$. The observed classical coordinates $(q,p)$ are these displacements scaled by Planck's classical capacity $A/h$:
 
 \begin{equation}
 \label{eq:ObservedCoordinates}
@@ -298,11 +297,11 @@ To simulate the physical encoding function $\operatorname{ENCODE}$, we leverage 
 \Function{ENCODE}{$x_b, \delta x$}
     \State $\text{left} \gets (-1, 0)$
     \State $\text{num} \gets 0, \quad \text{den} \gets 1$
-    \State $x_\mu^* \gets \text{num} / \text{den}$
+    \State $x_\mu \gets \text{num} / \text{den}$
     \State $\text{right} \gets (1, 0)$
     \State $s_x \gets \text{``''}$
-    \While{$|x_\mu^* - x_b| > \delta x$}
-        \If{$x_\mu^* < x_b$} 
+    \While{$|x_\mu - x_b| > \delta x$}
+        \If{$x_\mu < x_b$} 
             \State $\text{left} \gets (\text{num}, \text{den})$
             \State $s_x \gets s_x + \text{``1''}$
         \Else 
@@ -311,9 +310,9 @@ To simulate the physical encoding function $\operatorname{ENCODE}$, we leverage 
         \EndIf
         \State $\text{num} \gets \text{left}_{\text{num}} + \text{right}_{\text{num}}$
         \State $\text{den} \gets \text{left}_{\text{den}} + \text{right}_{\text{den}}$
-        \State $x_\mu^* \gets \text{num} / \text{den}$
+        \State $x_\mu \gets \text{num} / \text{den}$
     \EndWhile
-    \State \Return $x_\mu^*, s_x$
+    \State \Return $x_\mu, s_x$
 \EndFunction
 \end{algorithmic}
 
@@ -322,21 +321,21 @@ For example, let $s_x = \texttt{1101}$. Taking the bitwise complement gives $\ba
 The minimal program $s_x^*$ is irreversibly destroyed, clearing the tape on $U$. This algorithmic erasure dissipates the Landauer action and yields the observable displacement:
 
 \begin{algorithmic}[1]
-\Function{ERASE}{$s_x^*, x_\mu^*, x_b$}
+\Function{ERASE}{$s_x^*, x_\mu, x_b$}
     \State $K_x \gets |s_x^*|$
     \While{$K_x > 0$}
         \State \Call{ShiftLeft}{$s_x^*$} 
         \Statex \Comment{Expends action $k_B T \ln{2} \tau$}
         \State $K_x \gets |s_x^*|$
     \EndWhile
-    \State $\epsilon_x \gets x_\mu^* - x_b$ \Comment{The phase-space displacement}
+    \State $\epsilon_x \gets x_\mu - x_b$ \Comment{The phase-space displacement}
     \State \Return $\epsilon_x$ \Comment{Classical observation $x = A/h \cdot \epsilon_x$}
 \EndFunction
 \end{algorithmic}
 
 \section{Time Evolution and Decoherence}
 
-Uncomputing the minimal-action microstate on $U$ is a physical process that unfolds over time. As the system clears bits from the tape, the microstate steps closer to the classical target, physically shrinking the offsets $\epsilon_q$ and $\epsilon_p$ toward zero. Because the classical coordinates scale directly with these squeezed offsets, they track this continuous erasure process:
+Uncomputing the selected microstate on $U$ is a physical process that unfolds over time. As the system clears bits from the tape, the microstate steps closer to the classical target, physically shrinking the offsets $\epsilon_q$ and $\epsilon_p$ toward zero. Because the classical coordinates scale directly with these squeezed offsets, they track this continuous erasure process:
 
 \begin{equation}
 \label{eq:TimeEvolutionCoordinates}
