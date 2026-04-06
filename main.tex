@@ -44,31 +44,28 @@ Quantum microstates are operationally indistinguishable inside Planck's quantum 
 
 \maketitle
 
-\section{Introduction}
-
-To understand the mechanics of this model, it is helpful to briefly set aside the traditional, statistical view of the Heisenberg uncertainty principle. Instead, we return to the foundation: Planck's quantum of action, $h$. 
-
-Imagine this fundamental unit not as a statistical blur, but as a physical de Gosson blob in phase space. The environment can stretch and squeeze this blob into various shapes, but its total area is strictly conserved. We will see later that the geometry of phase space necessitates a conjugate pair of $h/2$ blobs, but visualizing a single blob is a helpful starting point.
-
-Now, suppose the center of this blob sits at an irrational coordinate, such as the golden ratio. In algorithmic information theory, the complexity of a number depends on the reference computer decoding it. If a machine understands symbolic algebra, the golden ratio is a finite string: $(1+\sqrt{5})/2$. However, to pinpoint a physical location in the continuum, we assume the universe's reference machine operates through successive spatial division. It acts as a discrete Szilard engine, narrowing down the coordinate by repeatedly inserting partitions to make a sequence of binary choices. 
-
-On this spatial reference machine, navigating to a rational number like $5/3$ terminates after a finite number of partitions, requiring a short binary encoding (e.g., $\mathtt{1101}$). But an irrational coordinate like the golden ratio never terminates. To pinpoint it perfectly in the continuum requires an infinitely long sequence of bits (e.g., $\mathtt{11010\overline{10}}$). Its algorithmic complexity is infinite.
-
-This is where the math collides with physical reality. Because the universe computes via these physical spatial divisions, the process is inextricably tied to thermodynamics. According to Landauer's principle, processing and erasing information requires a physical expenditure of action---a finite amount of heat dissipated over a finite amount of time for every single bit. To erase an infinitely long binary string would require an infinite amount of physical action. However, any real physical system is bounded by a finite amount of available classical action. The universe simply does not have the budget to handle infinite spatial precision.
-
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{erase.pdf}
-\caption{\textbf{Information erasure inside the quantum of action} (schematic). The classical action boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A = \pi \Delta q \Delta p \ge h/2$ in phase space. The squeezed boundaries $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. These squeezed boundaries enclose an interior ellipse with area $\pi \delta q \delta p = \frac{\pi \hbar^2}{\Delta q \Delta p}$. Because all microstates inside the quantum of action $h$ are operationally indistinguishable, Landauer's principle compels the selection of the unique microstate $(q_\mu, p_\mu)$ requiring the least action to erase. The coordinate offsets $(\epsilon_q, \epsilon_p)$ from this selected state to the blob centers $(q_b,p_b)$ determine the classical observations $(q, p) = \frac{A}{h}(\epsilon_q, \epsilon_p)$. The erasure follows the minimal-action path with binary encoding $s^*$, whose bit count is the Kolmogorov complexity $K = |s^*|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)$.}
+\caption{\textbf{Information erasure inside the quantum of action} (schematic). The classical action boundaries $\Delta q$ and $\Delta p$ determine the classical action area $A = \pi \Delta q \Delta p \ge h/2$ in phase space. The squeezed boundaries $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. These squeezed boundaries enclose the interior uncertainty ellipse with area $\pi \delta q \delta p = \frac{\pi \hbar^2}{\Delta q \Delta p}$. Because all microstates inside the quantum of action $h$ are operationally indistinguishable, Landauer's principle compels the selection of the unique microstate $(q_\mu, p_\mu)$ requiring the least action to erase. The coordinate offsets $(\epsilon_q, \epsilon_p)$ from this selected state to the blob centers $(q_b,p_b)$ determine $(q, p) = \frac{A}{h}(\epsilon_q, \epsilon_p)$. The erasure follows the minimal-action path with binary encoding $s$, whose bit count is $b = |s|$. The physical scales satisfy $|\epsilon_q| \le \delta q \le \Delta q$ and $|\epsilon_p| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q| \Delta p + \pi \Delta q |\epsilon_p|)$.}
 \label{fig:erase_schematic}
 \end{figure}
 
-Faced with a finite action budget, the universe must truncate. But how is the system allowed to simply swap an exact coordinate for an approximation? Because inside the quantum of action, all microstates are operationally indistinguishable. No physical measurement can tell them apart. This establishes a fundamental many-to-one mapping: an infinite pool of mathematically distinct coordinates within the blob all share the same physical identity. Since any coordinate in this pool is physically valid, the universe selects the microstate that requires the least action to erase.
+\section{Introduction}
 
-Instead of the infinitely complex golden ratio, it settles for a nearby simple fraction, like $5/3$. Clearing the excess algorithmic information to reach this low-complexity state is an irreversible thermodynamic process. This short binary program requires the least physical action to erase, safely fitting within the system's classical limits.
+We briefly set aside the traditional, statistical view of the Heisenberg uncertainty principle \cite{Robertson1929}. Instead, we return to the foundation: Planck's quantum of action, $h$ \cite{DeGosson2017}. 
 
-We show that this thermodynamic truncation is the engine of quantum mechanics. Because the universe can only afford finite bit strings, an infinity of precise coordinates is forced to irreversibly erase to a single nearby state. This mandatory Landauer process granulates the continuum. The thermodynamic necessity to expend the least erasure action pixelates phase space, resolving the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
+Imagine this fundamental unit not as a statistical blur, but as a physical de Gosson blob in phase space \cite{DeGosson2008}. Without loss of generality, we consider a 1D system. The environment can stretch and squeeze this blob into various shapes, but its area in phase space is conserved \cite{Gromov1985}. We will see later that the interior of Planck's quantum of action \cite{Zurek2001} necessitates a conjugate pair of $h/2$ blobs, but visualizing a single blob is a helpful starting point.
 
+Now, suppose the center of this blob sits at an irrational coordinate, such as the golden ratio $\phi$. If a machine understands symbolic algebra, the golden ratio is a finite string: $\phi = (1+\sqrt{5})/2$. However, to pinpoint a physical location in the continuum, the universe operates as a discrete Szilard engine, narrowing down the coordinate by repeatedly inserting partitions to make a sequence of binary choices \cite{PlenioVitelli2001}. 
+
+A rational coordinate like $3/2$ terminates after a finite number of partitions, requiring a short binary sequence (e.g., $\mathtt{110}$). But an irrational coordinate like the golden ratio never terminates. Pinpointing the value perfectly in the continuum requires an infinite sequence of binary choices (e.g., $\phi = \mathtt{11010\overline{10}}$).
+
+According to Landauer's principle \cite{Landauer1961}, erasing information requires a physical expenditure of action---a finite amount of heat dissipated over a finite amount of time for every single bit. To erase an infinitely long binary string would require an infinite amount of physical action. However, any real physical system is bounded by a finite amount of available classical action. The universe simply does not have the budget to handle infinite phase-space precision.
+
+Faced with a finite action budget, the universe must truncate. But how is the system allowed to simply swap an exact coordinate for an approximation? Because inside the quantum of action, the absolute limit of physical information extraction renders all microstates operationally indistinguishable \cite{Brillouin1956, Peres1993, VonNeumann1932, Gromov1985}. This establishes a fundamental many-to-one mapping: an infinite pool of mathematically distinct coordinates within the blob all share the same physical identity. Since any coordinate in this pool is physically valid, the universe selects the microstate that requires the least action to erase \cite{FeynmanHibbs1965, Lloyd2000, Landauer1961}. Instead of the infinitely long sequence of the golden ratio, it settles for a nearby simple fraction, like $3/2$. Clearing the excess algorithmic information to reach this state is an irreversible thermodynamic process that safely fits within the system's classical limits.
+
+In this letter, we show how this thermodynamic truncation leads to quantum and classical mechanics. This mandatory Landauer process granulates the continuum. The thermodynamic necessity to expend the least erasure action pixelates phase space, resolving the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
 \section{Landauer: Information Erasure}
 
 Landauer's principle establishes the minimum thermodynamic cost of information erasure \cite{Landauer1961}:
@@ -78,13 +75,12 @@ Landauer's principle establishes the minimum thermodynamic cost of information e
 E_L = k_B T \ln{2}
 \end{equation}
 
-The total energy dissipated scales with algorithmic information content, defined as the Kolmogorov complexity $K$ \cite{Kolmogorov1965}:
+The total energy dissipated scales with the count of bits in the binary sequence $b=|s|$ \cite{Bennett1982}:
 
 \begin{equation}
-\label{eq:LandauerErasureK}
-\text{Total Landauer Cost} = K k_B T \ln{2}
+\label{eq:LandauerErasureb}
+\text{Total Landauer Cost} = b E_L
 \end{equation}
-
 
 \section{De Gosson: The Quantum Blob}
 
@@ -129,10 +125,10 @@ To constrain Landauer erasure by the classical action, it is dimensionally neces
 
 \begin{equation}
 \label{eq:ErasureActionDefinition}
-\text{Erasure Action} = K E_L \tau
+\text{Erasure Action} = b E_L \tau
 \end{equation}
 
-We validate this definition at the limit of the minimal quantum phase space, where the pair of quantum blobs degenerate into a perfect overlapping circle with area $h/2$. Saturated by one position bit and one momentum bit, $K = K_q + K_p = 2$, the minimal erasure action becomes:
+We validate this definition at the limit of the minimal quantum phase space, where the pair of quantum blobs degenerate into a perfect overlapping circle with area $h/2$. Saturated by one position bit and one momentum bit, $b = b_q + b_p = 2$, the minimal erasure action becomes:
 
 \begin{equation}
 \label{eq:MinimalErasureAction}
@@ -143,14 +139,14 @@ Solving for $\tau$ recovers the Margolus-Levitin limit \cite{MargolusLevitin1998
 
 \begin{equation}
 \label{eq:MLErasureTime}
-\tau_{K=2} = \frac{h}{4 E_L} = \tau_\perp
+\tau_{b=2} = \frac{h}{4 E_L} = \tau_\perp
 \end{equation}
 
 This demonstrates that the Margolus-Levitin minimal orthogonal time corresponds to the maximal erasure time.
 
 \section{Lloyd: Erasure Action and Classical Action}
 
-Lloyd demonstrated that the number of elementary logical operations $N$ a physical system can perform in time $t$ is fundamentally bounded by its total available action, $N \le \frac{2 E t}{\pi \hbar}$ \cite{Lloyd2000}. Applying this limit to the geometry of phase space, the total action required to erase $K$ bits of information cannot exceed the classical action area, $A$:
+Lloyd demonstrated that the number of elementary logical operations $N$ a physical system can perform in time $t$ is fundamentally bounded by its total available action, $N \le \frac{2 E t}{\pi \hbar}$ \cite{Lloyd2000}. Applying this limit to the geometry of phase space, the total action required to erase $b$ bits of information cannot exceed the classical action area, $A$:
 
 \begin{equation}
 \label{eq:ErasureAndClassicalActionPlain}
@@ -159,7 +155,7 @@ Lloyd demonstrated that the number of elementary logical operations $N$ a physic
 
 \begin{equation}
 \label{eq:ErasureAndClassicalAction}
-K E_L \tau \le A
+b E_L \tau \le A
 \end{equation}
 
 \section{Zurek: One Blob or Two?}
@@ -196,7 +192,7 @@ Planck demonstrated \cite{Planck1906} that a classical phase space of area $A$ h
 
 \begin{equation}
 \label{eq:GeometricActionLimit}
-(K_q + K_p) E_L \tau \le \frac{A}{h} (\pi \delta q  \Delta p + \pi \Delta q \delta p)
+(b_q + b_p) E_L \tau \le \frac{A}{h} (\pi \delta q  \Delta p + \pi \Delta q \delta p)
 \end{equation}
 
 Where the erasure paths from the selected microstate $(q_\mu, p_\mu)$ to the blob centers $(q_b, p_b)$ are bounded by $|\epsilon_q| \le \delta q$ and $|\epsilon_p| \le \delta p$.
@@ -206,13 +202,13 @@ Where the erasure paths from the selected microstate $(q_\mu, p_\mu)$ to the blo
 To understand the physical machinery of Equation~\ref{eq:GeometricActionLimit}, we can isolate the provisioning and expenditure of algorithmic information:
 
 \subsubsection{The Quantum Capacity ($A/h$)} 
-The area of the conjugate blob pair is the quantum of action, $h$. Because each quantum blob $A_b = h/2$ can only ever fund the minimal bit budget ($K_q = 1, K_p = 1$), the action required to support a classical bit budget ($K \gg 1$) must be provisioned by the classical scale of the system. The multiplier $A/h$ provides this capacity, scaling the quantum of action $h$ up to the classical action necessary to support the total bits in $K$.
+The area of the conjugate blob pair is the quantum of action, $h$. Because each quantum blob $A_b = h/2$ can only ever fund the minimal bit budget ($b_q = 1, b_p = 1$), the action required to support a classical bit budget ($b \gg 1$) must be provisioned by the classical scale of the system. The multiplier $A/h$ provides this capacity, scaling the quantum of action $h$ up to the classical action necessary to support the total bits in $b$.
 
 \subsubsection{The Geometric Squeezing ($h/2$)} 
 When a classical boundary expands (e.g., increasing the classical momentum boundary $\Delta p$), symplectic geometry strictly conserves the area of each de Gosson blob at exactly $h/2$. Because this area cannot grow, the blob must physically compress the squeezed position boundary ($\delta q$) to compensate. 
 
-\subsubsection{The Resolving Power ($K$)} 
-This symplectic squeezing acts as the resolving power of the phase space. To pinpoint a microstate within increasingly fine squeezed boundaries ($\delta q \to 0$, $\delta p \to 0$), the universe must expend more algorithmic information ($K_q \to \infty, K_p \to \infty$). Therefore, classical boundaries enforce squeezed resolution, which in turn demands a larger bit budget:
+\subsubsection{The Resolving Power ($b$)} 
+This symplectic squeezing acts as the resolving power of the phase space. To pinpoint a microstate within increasingly fine squeezed boundaries ($\delta q \to 0$, $\delta p \to 0$), the universe must expend more algorithmic information ($b_q \to \infty, b_p \to \infty$). Therefore, classical boundaries enforce squeezed resolution, which in turn demands a larger bit budget:
 
 \begin{equation}
 \label{eq:ResolvingPowerPlain}
@@ -227,12 +223,12 @@ Isolating the conjugate pairs reveals the causal sequence: the expanding classic
 
 \begin{equation}
 \label{eq:BitBudgetResolutionCoordinate}
-\Delta p \sim \frac{1}{\delta q} \sim K_q 
+\Delta p \sim \frac{1}{\delta q} \sim b_q 
 \quad \text{and} \quad
-\Delta q \sim \frac{1}{\delta p} \sim K_p 
+\Delta q \sim \frac{1}{\delta p} \sim b_p 
 \end{equation}
 
-When the classical momentum boundary ($\Delta p$) grows, the squeezed position boundary ($\delta q$) must shrink. The universe must therefore spend more bits ($K_q$) to select and erase the state. This changing bit budget dictates the physics we observe: low action affords only enough bits for discrete quantum configurations, while high action supplies the massive bit budget required to draw smooth classical trajectories.
+When the classical momentum boundary ($\Delta p$) grows, the squeezed position boundary ($\delta q$) must shrink. The universe must therefore spend more bits ($b_q$) to select and erase the state. This changing bit budget dictates the physics we observe: low action affords only enough bits for discrete quantum configurations, while high action supplies the massive bit budget required to draw smooth classical trajectories.
 
 \section{Quantum Density from Erasure}
 
@@ -268,18 +264,18 @@ Let $U$ be a Universal Reversible Turing Machine. For any phase-space coordinate
 (x_\mu, s_x) = \operatorname{ENCODE}(x_b, \delta x)
 \end{equation}
 
-Following Bennett's protocol for logical reversibility \cite{Bennett1973}, we take the bitwise complement $\bar{s}_x$ and reverse the string to form the minimal uncomputation path, with algorithmic complexity $K_x = |s_x^*| = |s_x|$:
+Following Bennett's protocol for logical reversibility \cite{Bennett1973}, we take the bitwise complement $\bar{s}_x$ and reverse the string to form the minimal uncomputation path, with algorithmic complexity $b_x = |s_x|$:
 
 \begin{equation}
-\label{eq:KolmogorovComplexity}
-s_x^* = (\bar{s}_x)^R
+\label{eq:ReverseInverse}
+(\bar{s}_x)^R
 \end{equation}
 
-Algorithmic erasure of this string physically uncomputes the microstate back to the blob center ($x_b$). This process expends Landauer action ($\Delta A_L = K_x E_L \tau$) to the environment, yielding the phase-space displacement $\epsilon_x$:
+Algorithmic erasure of this string physically uncomputes the microstate back to the blob center ($x_b$). This process expends Landauer action ($\Delta A_L = b_x E_L \tau$) to the environment, yielding the phase-space displacement $\epsilon_x$:
 
 \begin{equation}
 \label{eq:ErasureFunction}
-\epsilon_x = \operatorname{ERASE}(s_x^*, x_\mu, x_b), \quad \text{expends} \quad \Delta A_L = K_x E_L \tau
+\epsilon_x = \operatorname{ERASE}(s_x, x_\mu, x_b), \quad \text{expends} \quad \Delta A_L = b_x E_L \tau
 \end{equation}
 
 As each selected microstate $(q_\mu, p_\mu)$ uncomputes to its respective center $(q_b, p_b)$, it generates the conjugate displacements $\epsilon_q$ and $\epsilon_p$. The observed classical coordinates $(q,p)$ are these displacements scaled by Planck's classical capacity $A/h$:
@@ -316,17 +312,17 @@ To simulate the physical encoding function $\operatorname{ENCODE}$, we leverage 
 \EndFunction
 \end{algorithmic}
 
-For example, let $s_x = \texttt{1101}$. Taking the bitwise complement gives $\bar{s}_x = \texttt{0010}$, and reversing it yields the uncomputation path $s_x^* = (\bar{s}_x)^R = \texttt{0100}$.
+For example, let $s_x = \texttt{1101}$. Taking the bitwise complement gives $\bar{s}_x = \texttt{0010}$, and reversing it yields the uncomputation path $s_x = (\bar{s}_x)^R = \texttt{0100}$.
 
-The minimal program $s_x^*$ is irreversibly destroyed, clearing the tape on $U$. This algorithmic erasure dissipates the Landauer action and yields the observable displacement:
+The minimal program $s_x$ is irreversibly destroyed, clearing the tape on $U$. This algorithmic erasure dissipates the Landauer action and yields the observable displacement:
 
 \begin{algorithmic}[1]
-\Function{ERASE}{$s_x^*, x_\mu, x_b$}
-    \State $K_x \gets |s_x^*|$
-    \While{$K_x > 0$}
-        \State \Call{ShiftLeft}{$s_x^*$} 
+\Function{ERASE}{$s_x, x_\mu, x_b$}
+    \State $b_x \gets |s_x|$
+    \While{$b_x > 0$}
+        \State \Call{ShiftLeft}{$s_x$} 
         \Statex \Comment{Expends action $k_B T \ln{2} \tau$}
-        \State $K_x \gets |s_x^*|$
+        \State $b_x \gets |s_x|$
     \EndWhile
     \State $\epsilon_x \gets x_\mu - x_b$ \Comment{The phase-space displacement}
     \State \Return $\epsilon_x$ \Comment{Classical observation $x = A/h \cdot \epsilon_x$}
@@ -348,10 +344,10 @@ By isolating time from the erasure action and expanding Landauer's limit ($E_L =
 
 \begin{equation}
 \label{eq:DecoherenceTime}
-\tau_D = \frac{A}{(K_q + K_p) k_B T \ln 2}
+\tau_D = \frac{A}{(b_q + b_p) k_B T \ln 2}
 \end{equation}
 
-This denominator sets the physical clock. A system maintains its quantum behavior if it remains small ($K \to 2$) and cold ($T \to 0$). If the state requires a massive bit budget ($K \gg 1$) or operates at a high temperature ($T \gg 0$), the denominator grows rapidly. The erasure time drops to zero, and the system becomes entirely classical.
+This denominator sets the physical clock. A system maintains its quantum behavior if it remains small ($b \to 2$) and cold ($T \to 0$). If the state requires a massive bit budget ($b \gg 1$) or operates at a high temperature ($T \gg 0$), the denominator grows rapidly. The erasure time drops to zero, and the system becomes entirely classical.
 
 \section{A Geometric Uncertainty Principle}
 
