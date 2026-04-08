@@ -73,7 +73,7 @@ In this letter, we show how Landauer erasure inside the quantum of action leads 
 \label{fig:harmonic_oscillator}
 \end{figure}
 
-\section{De Gosson: The Quantum Blob}
+\section{Inside the Quantum of Action}
 
 Phase-space coordinates are $(q,p)$, where $q$ is position and $p$ is momentum. According to the Heisenberg uncertainty principle, $\sigma_q \sigma_p \ge \hbar/2$ \cite{Heisenberg1927}. Geometrically, symplectic mechanics translates this statistical variance into a $1\sigma$ covariance ellipse in phase space, bounding the minimum uncertainty region of the state as $q^2/(2\sigma_q^2) + p^2/(2\sigma_p^2) \le 1$ \cite{DeGosson2006}. The geometric area $A$ of this ellipse is given by $A = \pi (\sqrt{2}\sigma_q) (\sqrt{2}\sigma_p) = 2\pi \sigma_q \sigma_p$.
 
@@ -90,8 +90,6 @@ De Gosson bridges this statistical uncertainty with phase-space geometry. By sat
 \end{equation}
 
 Protected by Gromov's non-squeezing theorem \cite{Gromov1985}, this $h/2$ minimum area is topologically conserved. Compressing the blob along one axis forces a proportional expansion along its conjugate.
-
-\section{Zurek: One Blob or Two?}
 
 Zurek \cite{Zurek2001} demonstrated that a quantum state develops localized structures as the classical action boundaries, $\Delta p$ and $\Delta q$, compress the conjugate squeezed boundaries, $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$. Expressing these squeezed boundaries as phase-space ellipses yields a conjugate pair of de Gosson blobs (see Fig.~\ref{fig:erase_schematic}) with areas $\pi \delta q \Delta p = h/2$ and $\pi \Delta q \delta p = h/2$.
 
@@ -130,7 +128,7 @@ Substituting the squeezed boundaries, the area of this inscribed ellipse is $\pi
 
 While the traditional uncertainty principle $\sigma_q \sigma_p \ge \hbar/2$ demands the macroscopic quantum states underlying Schr{\"{o}}dinger's cat paradox \cite{Schrodinger1980Trimmer}, this squeezed uncertainty principle precludes them: as classical boundaries expand, they compress the conjugate blobs into fine crosshairs (see the bottom-left panel of Fig.~\ref{fig:harmonic_oscillator}), enforcing the correspondence principle.
 
-\section{Landauer: Information Erasure}
+\section{Landauer Erasure}
 
 Landauer's principle establishes the minimum thermodynamic cost of the information erasure of one bit as $E_L = k_B T \ln{2}$ \cite{Landauer1961}.
 
@@ -157,8 +155,6 @@ Solving for $\tau$ recovers the Margolus-Levitin limit \cite{MargolusLevitin1998
 
 This demonstrates that the Margolus-Levitin minimal orthogonal time corresponds to the maximal erasure time for a single bit-pair.
 
-\section{Lloyd: Erasure Action and Classical Action}
-
 Lloyd demonstrated that the number of elementary logical operations $N$ a physical system can perform in time $t$ is bounded by its available energy: $N \le \frac{2 E t}{\pi \hbar}$ \cite{Lloyd2000}. By identifying the erasure of coordinate information as the logical operation of the system, we can map the bits of coordinate precision directly to this computational limit.
 
 Applying this limit to the geometry of phase space, we posit that the total action required to erase $N$ bits of information cannot exceed the classical action area $A$ available to the system:
@@ -172,8 +168,6 @@ Applying this limit to the geometry of phase space, we posit that the total acti
 \label{eq:ErasureAndClassicalAction}
 N E_L \tau \le A
 \end{equation}
-
-\section{Planck: Quantum Erasure Capacity}
 
 Planck demonstrated \cite{Planck1906} that a classical phase space of area $A$ has a configuration capacity of $A/h$. Expanding the quantum of action $h$ into its pair of quantum blobs (Eq.~\ref{eq:Blobs}), we scale the erasure action (Eq.~\ref{eq:ErasureAndClassicalAction}):
 
@@ -217,7 +211,7 @@ Isolating the conjugate pairs reveals the causal sequence: the expanding classic
 
 When the classical momentum boundary ($\Delta p$) grows, the squeezed position boundary ($\delta q$) must shrink. The universe must therefore spend more bits ($N_q$) to select and erase the state. This changing bit budget dictates the physics we observe: low action affords only enough bits for discrete quantum configurations, while high action supplies the bit budget required to draw smooth classical trajectories.
 
-\section{Quantum Density from Erasure}
+\section{Landauer Erasure Density}
 
 Standard phase-space formulations of quantum mechanics traditionally employ the Wigner quasi-probability distribution $W(q,p)$ \cite{Wigner1932}. In the context of information erasure, however, we instead introduce the Landauer erasure density $L(q,p)$ as a sum of discrete Iverson brackets \cite{Knuth1992}—mathematical switches that snap to exactly 1 when a microstate is occupied and 0 otherwise—over the $M$ accessible microstates:
 
@@ -234,8 +228,6 @@ N(q) = \sum_{p} L(q,p)
 \quad \text{and} \quad
 N(p) = \sum_{q} L(q,p)
 \end{equation}
-
-\section{Bennett: Universal Eraser}
 
 For any phase-space coordinate, $x \in \{q, p\}$, an encoding function selects the microstate $x_\mu^*$ inside the squeezed boundary $\delta x$ centered on the blob coordinate $x_b$, yielding a binary sequence $s_x^*$:
 
@@ -327,5 +319,14 @@ This denominator sets the physical clock. A system maintains its quantum behavio
 \section{Finite or Infinite Support}
 
 Standard phase-space representations utilize infinite Gaussian tails, whereas our Landauer erasure density relies on strict operational boundaries. Because thermodynamic erasure costs are overwhelmingly dominated by the localized core volume, this distinction is physically moot. Furthermore, compact support cleanly eliminates the conceptual artifact of assigning non-zero probabilities at classical distances.
+
+\section{Computational Methods and Simulation Architecture}
+
+We simulated a total of 1,000,010,000 individual erasures across 10,000 discrete values of available classical action, sweeping 100,001 independent classical target coordinates ($x_b$) per action level. To ensure uniform data density and avoid quadratic warping at high energies, we performed a linear scan directly through the classical action space from $A = 0.01$ to $A = 100.0$ with a strict step size of 0.01. The continuous action values were mapped to the normalized classical momentum boundary via $P = \sqrt{A}$ to seed the dynamic simulations.
+
+For each state, the thermodynamic erasure sequence was computed using a custom high-performance C++ simulation engine bound to an R-based parallel data pipeline (\texttt{Rcpp} and \texttt{RcppParallel}). The primary topological partitioning was driven by the Stern-Brocot algorithmic engine. Crucially, the engine enforces a strict mathematical condition for compact support; the iterative erasure loop operates under a closed-set limit, halting the algorithm the exact moment the absolute erasure displacement $|\epsilon_x^*|$ satisfies the squeezed boundary $\delta x$. This prevents artificial inflation of the Landauer action and ensures the phase-space volume is strictly bounded by the classical action capacity. 
+
+At each discrete physical step, the simulation resolves the classical target $x_b$ into its selected microstate $x_\mu^*$ and extracts the topological erasure displacement $\epsilon_x^*$, the exact binary sequence of the uncomputation path $(\bar{s}_x^*)^R$, and the total sequence length $N_x$ in bits. The raw output was subsequently processed using multi-threaded \texttt{data.table} routines to calculate the ensemble mean, median, absolute minimum, and absolute maximum sequence lengths, verifying the classical action bound $N E_L \tau \le A$ and extracting the discrete topological nodes from the resulting probability densities.
+
 \bibliography{main}
 \end{document}
