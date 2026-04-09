@@ -120,7 +120,7 @@ This establishes a classical action boundary on squeezed uncertainty:
 \text{Squeezed Uncertainty} \propto \frac{1}{\text{Classical Action}}
 \end{equation}
 
-Substituting the squeezed boundaries, the area of this inscribed ellipse is $\pi \delta q \delta p = \pi(\hbar/\Delta p)(\hbar/\Delta q)$, yielding a squeezed uncertainty principle:
+Substituting the squeezed boundaries, the area of this inscribed ellipse is $\pi \delta q \delta p = \pi(\hbar/\Delta p)(\hbar/\Delta q)$, yielding the squeezed uncertainty equation:
 
 \begin{equation}
 \label{eq:SqueezedUncertaintyPrinciple}
@@ -330,10 +330,12 @@ We simulated a total of 990,199,901 individual erasures across 9,901 discrete va
 
 To ensure the binary partitioning of the system preserves physical symmetry, the computational engine strictly evaluates the phase space over a normalized reference interval, $\tilde{x} \in [-1.0, 1.0]$. Therefore, the dynamic physical boundaries must be mapped into this relative coordinate space. Dividing the 1D physical squeezed boundary by the expanding classical macroscopic boundary yields the relative algorithmic tolerance required to resolve a single microstate:
 \begin{equation}
-\widetilde{\delta x}_{\text{rel}} = \frac{\widetilde{\delta x}}{\widetilde{\Delta x}} = \frac{\frac{2}{\pi}\sqrt{A_0/A}}{\sqrt{A/A_0}} = \frac{2}{\pi} \frac{A_0}{A}
+\widetilde{\delta x}_{\text{rel}} = \frac{\widetilde{\delta x}}{\widetilde{\Delta x}} = \frac{\frac{2}{\pi}\sqrt{A_0/A}}{\sqrt{A/A_0}} = \frac{2}{\pi} \frac{A_0}{A}.
 \end{equation}
+ 
+For each state, the thermodynamic erasure was computed using a custom C++ simulation engine bound to an R-based parallel data pipeline (\texttt{Rcpp} and \texttt{RcppParallel}). To simulate the physical encoding function $\operatorname{ENCODE}$, the binary phase-space partitioning uses a Stern-Brocot tree \cite{ConcreteMath}, leveraging modified sequences \cite{Aiylam2013} to extend the boundaries to $\pm\infty$ and cover the real line $\mathbb{R}$.
 
-For each state, the thermodynamic erasure sequence was computed using a custom C++ simulation engine bound to an R-based parallel data pipeline (\texttt{Rcpp} and \texttt{RcppParallel}). To simulate the physical encoding function $\operatorname{ENCODE}$, the binary phase-space partitioning was driven by a Stern-Brocot tree. Seeded by the mapped target coordinates ($\tilde{x}_b$) and the relative algorithmic tolerance ($\widetilde{\delta x}_{\text{rel}}$), the fundamental interval is dynamically partitioned into a sequence of binary address bits:
+Seeded by the mapped target coordinates ($\tilde{x}_b$) and the relative algorithmic tolerance ($\widetilde{\delta x}_{\text{rel}}$), the fundamental interval is dynamically partitioned into a sequence of binary address bits:
 
 \begin{algorithmic}[1]
 \Function{ENCODE}{$\tilde{x}_b, \widetilde{\delta x}_{\text{rel}}$}
