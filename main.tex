@@ -44,14 +44,14 @@ Quantum microstates are operationally indistinguishable inside Planck's quantum 
 
 \section{Introduction}
 
-While the uncertainty principle is typically framed as a statistical limit \cite{Robertson1929}, our starting point is its geometric foundation: Planck's quantum of action, $h$ \cite{DeGosson2017}. Imagine this unit not as a statistical blur, but as a de Gosson blob in phase space \cite{DeGosson2008}. 
+While the uncertainty principle is typically framed as a statistical limit \cite{Robertson1929}, our starting point is its geometric foundation: Planck's quantum of action, $h$ \cite{Planck1901, Planck1906}. Imagine this unit not as a statistical blur, but as a de Gosson blob in phase space \cite{DeGosson2008}. 
 
 Without loss of generality, we consider a 1D system. The environment can stretch and squeeze this blob into various shapes, but its area $A_b=h/2$ is conserved \cite{Gromov1985}. We will see later that Zurek's derivation of sub-Planck structure \cite{Zurek2001} necessitates a conjugate pair of $h/2$ blobs whose geometric sum is the quantum of action $h$, but visualizing a single blob provides a helpful starting point.
 
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{figures/quantum_of_action.pdf}
-\caption{\textbf{Microstate selection inside the quantum of action} (schematic, 1D case). Geometrically translating the statistical Heisenberg limit ($\sigma_q \sigma_p \ge \hbar/2$), the classical semi-axes $\Delta q = \sqrt{2}\sigma_q$ and $\Delta p = \sqrt{2}\sigma_p$ determine the classical action area $A = \pi \Delta q \Delta p \ge h/2$ in phase space. The squeezed boundaries $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. These squeezed boundaries enclose the interior uncertainty ellipse with area $\pi \delta q \delta p = \frac{\pi \hbar^2}{\Delta q \Delta p}$. Among the infinite pool of operationally indistinguishable microstates $\{(q_\mu, p_\mu)\}$ inside the quantum of action $h$, Landauer's principle compels the selection of the unique microstate $(q_\mu^*, p_\mu^*)$ requiring the least action to erase. Scaling the selection offsets $\boldsymbol{\epsilon}^*=(\epsilon_q^*, \epsilon_p^*)$ from the classical blob centers $(q_b, p_b)$ by $\frac{A}{\pi \hbar}$ yields the classically observed coordinates $(q, p) = \frac{A}{\pi \hbar}(\epsilon_q^*, \epsilon_p^*)$. The physical scales satisfy $|\epsilon_q^*| \le \delta q \le \Delta q$ and $|\epsilon_p^*| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q^*| \Delta p + \pi \Delta q |\epsilon_p^*|)$.}
+\caption{\textbf{Microstate selection inside the quantum of action} (schematic, 1D case). Geometrically translating the statistical Heisenberg limit ($\sigma_q \sigma_p \ge \hbar/2$), the classical semi-axes $\Delta q = \sqrt{2}\sigma_q$ and $\Delta p = \sqrt{2}\sigma_p$ determine the classical action area $A = \pi \Delta q \Delta p \ge h/2$ in phase space. The squeezed boundaries $\delta q = \hbar / \Delta p$ and $\delta p = \hbar / \Delta q$ characterize the symplectic squeezing of the conjugate pair of quantum blobs, $\pi \delta q \Delta p = \frac{h}{2}$ and $\pi \Delta q \delta p = \frac{h}{2}$, whose sum is the quantum of action $h$. These squeezed boundaries enclose the interior uncertainty ellipse with area $\pi \delta q \delta p = \frac{\pi \hbar^2}{\Delta q \Delta p}$. Among the infinite pool of operationally indistinguishable microstates $\{(q_\mu, p_\mu)\}$ inside the quantum of action $h$, Landauer's principle compels the selection of the microstate $(q_\mu^*, p_\mu^*)$ requiring the least action to erase. Scaling the selection offsets $\boldsymbol{\epsilon}^*=(\epsilon_q^*, \epsilon_p^*)$ from the classical blob centers $(q_b, p_b)$ by $\frac{A}{\pi \hbar}$ yields the classically observed coordinates $(q, p) = \frac{A}{\pi \hbar}(\epsilon_q^*, \epsilon_p^*)$. The physical scales satisfy $|\epsilon_q^*| \le \delta q \le \Delta q$ and $|\epsilon_p^*| \le \delta p \le \Delta p$, bounding the erasure action $\frac{A}{h}(\pi |\epsilon_q^*| \Delta p + \pi \Delta q |\epsilon_p^*|)$.}
 \label{fig:erase_schematic}
 \end{figure}
 
@@ -61,9 +61,9 @@ A rational coordinate like $3/2$ terminates after a finite number, $N$, of parti
 
 According to Landauer's principle \cite{Landauer1961}, erasing information requires a physical expenditure of action. Following Landauer's framing, a bit must be instantiated in a physical degree of freedom. Erasing that information requires transferring phase-space volume from this information-bearing degree of freedom (the kinematic geometry of the system) to the non-information-bearing degrees of freedom (the thermal bath). This manifests as a thermodynamic cost paid to the environment: a finite amount of heat $k_B T \ln{2}$ dissipated over a finite amount of time $\tau$ for each bit.
 
-To erase an infinitely long binary sequence would therefore require an infinite amount of thermodynamic action to be dissipated into the bath. However, physical systems are strictly bounded by their kinematic capacity---a finite amount of available classical action $A = \pi \Delta q \Delta p \ge h/2$. The system cannot expend more action on the thermal bath than its classical boundaries contain \cite{Lloyd2000}. The universe simply does not possess the kinematic budget to fund infinite phase-space precision.
+To erase an infinitely long binary sequence would therefore require an infinite amount of Landauer action, $A_L$, to be dissipated into the bath. However, physical systems are strictly bounded by their kinematic capacity---a finite amount of available classical action $A = \pi \Delta q \Delta p \ge h/2$. The system cannot expend more action on the thermal bath than its classical boundaries contain $A_L \le A$ \cite{Lloyd2000}. The universe simply does not possess the kinematic budget to fund infinite phase-space precision.
 
-Faced with this finite action budget, the universe must truncate. But how is the system allowed to swap an exact coordinate for an approximation? Because no physical measurement can resolve the interior of the quantum of action, the infinite possible microstates within it remain operationally indistinguishable \cite{Brillouin1956, Peres1993, VonNeumann1932, Gromov1985}. This establishes a many-to-one mapping: an infinite pool of microstates within the blob $\{(q_\mu, p_\mu)\}$ all share the same physical identity. Since any coordinate in this pool is physically valid, the universe selects the microstate $(q_\mu^*, p_\mu^*)$ that requires the least action to erase, defining our minimal Landauer cost $A_L^*$ \cite{FeynmanHibbs1965, Landauer1961}. Instead of the infinitely long sequence of the golden ratio, it settles for a nearby coordinate with a short binary encoding, like $3/2 \leftrightarrow \mathtt{110}$. Clearing the excess bits to reach this state is an irreversible thermodynamic process perfectly bounded by the system's classical action limit.
+Faced with this finite action budget, the universe must truncate. But how is the system allowed to swap an exact coordinate for an approximation? Because no physical measurement can resolve the interior of the quantum of action, the infinite possible microstates within it remain operationally indistinguishable \cite{Brillouin1956, Peres1993, VonNeumann1932, Gromov1985}. This establishes a many-to-one mapping: an infinite pool of microstates within the blob $\{(q_\mu, p_\mu)\}$ all share the same physical identity. Since any coordinate in this pool is physically valid, the universe selects the microstate $(q_\mu^*, p_\mu^*)$ that requires the least Landauer action to erase, $A_L^*$ \cite{FeynmanHibbs1965, Landauer1961}. Instead of the infinitely long sequence of the golden ratio, it settles for a nearby coordinate with a short binary encoding (e.g., $3/2 \leftrightarrow \mathtt{110}$). Clearing the excess bits to return from this state to the ground state is an irreversible thermodynamic process perfectly bounded by the system's classical action limit $A_L^* \le A$.
 
 In this letter, we show how Landauer erasure inside the quantum of action leads to quantum mechanics and satisfies the correspondence principle. The physical necessity to minimize this action dictates the resolution of phase space, driving the transition from discrete quantum microstates at low action to continuous classical trajectories at high action.
 
@@ -74,7 +74,7 @@ In this letter, we show how Landauer erasure inside the quantum of action leads 
 \label{fig:harmonic_oscillator}
 \end{figure}
 
-\section{Inside the Quantum of Action}
+\section{The Quantum of Action}
 
 Phase-space coordinates are $(q,p)$, where $q$ is position and $p$ is momentum. According to the Heisenberg uncertainty principle, $\sigma_q \sigma_p \ge \hbar/2$ \cite{Heisenberg1927}. Geometrically, symplectic mechanics translates this statistical variance into a $1\sigma$ covariance ellipse in phase space, bounding the minimum uncertainty region of the state as $q^2/(2\sigma_q^2) + p^2/(2\sigma_p^2) \le 1$ \cite{DeGosson2006}. The geometric area $A$ of this ellipse is given by $A = \pi (\sqrt{2}\sigma_q) (\sqrt{2}\sigma_p) = 2\pi \sigma_q \sigma_p$.
 
@@ -133,11 +133,18 @@ While the traditional uncertainty principle $\sigma_q \sigma_p \ge \hbar/2$ dema
 
 Landauer's principle establishes the minimum thermodynamic cost of the information erasure of one bit as $E_L = k_B T \ln{2}$ \cite{Landauer1961}.
 
-To express the Landauer erasure of $N$ bits as action, it is dimensionally necessary to introduce a characteristic erasure time, $\tau$:
+To express the Landauer erasure of $N$ bits as action, 
+
+\begin{equation}
+\label{eq:ErasureActionPlain}
+\text{Landauer Action} = \text{Bits} \times \text{Energy} \times \text{Time}
+\end{equation}
+
+it is dimensionally necessary to introduce a characteristic erasure time, $\tau$:
 
 \begin{equation}
 \label{eq:ErasureActionDefinition}
-\text{Total Erasure Action} = N E_L \tau
+A_L = N E_L \tau
 \end{equation}
 
 We validate this definition at the limit of the minimal quantum phase space, where the pair of quantum blobs degenerate into an overlapping circle with area $h/2$. Saturated by one position bit and one momentum bit, $N = N_q + N_p = 2$, the minimal erasure action becomes:
