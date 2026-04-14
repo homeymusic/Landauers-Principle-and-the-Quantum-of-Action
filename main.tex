@@ -398,6 +398,13 @@ Once encoded, the universe must physically erase the state. For example, let $s_
 
 The raw output was subsequently processed using multi-threaded \texttt{data.table} routines to calculate the ensemble mean, median, minimum, and maximum sequence lengths, verifying the classical action bound $N E_L \tau \le A$ and extracting the discrete topological nodes from the resulting probability densities.
 
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/erasure_tree.png}
+\caption{\textbf{Encoding and erasure tree} (schematic).}
+\label{fig:erasure_tree}
+\end{figure*}
+
 \section{Thermodynamic Selection of Phase-Space Resonances}
 
 As the classical action boundary ($\Delta p$) expands, symplectic geometry demands a proportional compression of the conjugate squeezed resolution boundary ($\delta q$) \cite{Zurek2001, DeGosson2006}. When this boundary shrinks, a previously minimal-action microstate (such as a coordinate at $+1/2$) may no longer fit within the topologically valid quantum phase-space area. To instantiate the state, the system must search deeper into phase space and transition to a newly permitted structural resonance.
