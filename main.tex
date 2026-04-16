@@ -45,7 +45,7 @@ Quantum microstates are operationally indistinguishable inside the quantum of ac
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{figures/quantum_of_action.png}
-\caption{\textbf{The quantum of action} (schematic, 1D case). By geometrically translating the statistical Heisenberg limit, $\sigma_q \sigma_p \ge \hbar/2$, the classical semi-axes $\Delta q = \sqrt{2}\sigma_q$ and $\Delta p = \sqrt{2}\sigma_p$ establish the relation $\pi \Delta q \Delta p \ge h/2$. In phase space, this is the classical action area, $A \ge h/2$. Confined by these classical boundaries, the interior resolves into a conjugate pair of squeezed quantum blobs, $a_q = h/2$ and $a_p = h/2$, whose sum is the quantum of action, $h$. Specifically, $a_q$ is squeezed by the reciprocal boundary $\delta q = \hbar / \Delta p$ to area $\pi \delta q \Delta p = h/2$, while $a_p$ is squeezed by $\delta p = \hbar / \Delta q$ to area $\pi \Delta q \delta p = h/2$. These orthogonal blobs enclose their interior ellipse with quantum action area, $a \le h/2$, evaluated as $\pi \delta q \delta p = \pi \hbar^2/(\Delta q \Delta p)$. This inverse scaling geometrically enforces the correspondence principle: as the classical action area $A$ increases, the squeezed blobs $a_q=h/2$ and $a_p=h/2$ compress  into fine cross hairs, shrinking the enclosed quantum action area $a$ (see Fig.~\ref{fig:simple_erasure_grid}). This geometric hierarchy establishes the quantum and classical relationships $a \le h/2 \le A$ and $a = (\pi \hbar)^2 / A$.}
+\caption{\textbf{The quantum of action} (schematic, 1D case). By geometrically translating the statistical Heisenberg limit, $\sigma_q \sigma_p \ge \hbar/2$, the classical semi-axes $\Delta q = \sqrt{2}\sigma_q$ and $\Delta p = \sqrt{2}\sigma_p$ establish the relation $\pi \Delta q \Delta p \ge h/2$. In phase space, this is the classical action area, $A \ge h/2$. Confined by these classical boundaries, the interior resolves into a conjugate pair of squeezed quantum blobs, $a_q = h/2$ and $a_p = h/2$, whose sum is the quantum of action, $h$. Specifically, $a_q$ is squeezed by the reciprocal boundary $\delta q = \hbar / \Delta p$ to area $\pi \delta q \Delta p = h/2$, while $a_p$ is squeezed by $\delta p = \hbar / \Delta q$ to area $\pi \Delta q \delta p = h/2$. These orthogonal blobs enclose their interior ellipse with quantum action area, $a \le h/2$, evaluated as $\pi \delta q \delta p = \pi \hbar^2/(\Delta q \Delta p)$. This inverse scaling geometrically enforces the correspondence principle: as the classical action area $A$ increases, the squeezed blobs $a_q=h/2$ and $a_p=h/2$ compress  into fine cross hairs, shrinking the enclosed quantum action area $a$ (see Fig.~\ref{fig:encoding_grid}). This geometric hierarchy establishes the quantum and classical relationships $a \le h/2 \le A$ and $a = (\pi \hbar)^2 / A$.}
 \label{fig:quantum_of_action}
 \end{figure}
 
@@ -59,7 +59,7 @@ Because no physical measurement can resolve the interior of the quantum of actio
 
 Physical systems are strictly bounded by their kinematic capacity---a finite amount of available classical action $A = \pi \Delta q \Delta p \ge h/2$. The system cannot expend more action on the thermal bath than its classical boundaries contain, $A_L \le A$ \cite{Lloyd2000}. Consequently, the universe does not possess the kinematic budget to fund infinite phase-space precision; to pinpoint a continuum value with an infinitely long sequence of information would require an infinite, impossible amount of Landauer action, $A_L$.
 
-Faced with this finite action budget, the universe must truncate. It leverages the many-to-one mapping of indistinguishable microstates $\{(q_\mu, p_\mu)\}$ sharing the same physical identity. Since any coordinate in this pool is physically valid, the universe selects the specific microstate $(q_\mu^*, p_\mu^*)$ that requires the least Landauer action to erase, $A_L^*$ \cite{FeynmanHibbs1965, Landauer1961}. Clearing these minimal bits to return from this state to the ground state is an irreversible thermodynamic process perfectly bounded by the system's classical action limit $A_L^* \le A$.
+Limited by finite action, out of the infinite indistinguishable microstates $\{(q_\mu, p_\mu)\}$ sharing the same physical identity, only those states that can be encoded within the available action are physically possible. Among those, the physically realized microstate $(q_\mu^*, p_\mu^*)$ is the one that requires the least action to encode kinematically and to erase thermodynamically, $A_L^*$ \cite{FeynmanHibbs1965, Landauer1961}. Clearing this least-action kinematic state to the ground state is an irreversible thermodynamic process perfectly bounded by the system's classical action limit, $A_L^* \le A$.
 
 To illustrate this physical truncation, consider the problem of pinpointing a coordinate in the continuum. The universe operates as a discrete Szilard engine \cite{Szilard1929}, narrowing down a location by repeatedly inserting partitions to make a sequence of binary choices \cite{PlenioVitelli2001}. Suppose the center of a quantum blob, $q_b$, sits at an irrational coordinate relative to a classical reference scale $q_0$, such that their ratio $q_b/q_0 = \phi \approx 0.618 \dots$ is the little golden ratio. While a machine that understands symbolic algebra could express this as a finite sequence $\phi = (\sqrt{5}-1)/2$, a physical Szilard engine would require an infinite sequence of binary choices (e.g., $\phi = \mathtt{1010\overline{10}}, N=\infty$) to resolve it. In contrast, a rational coordinate like $+1/2$ terminates after a finite number, $N$, of partitions, requiring a short binary sequence (e.g., $\mathtt{10}, N=2$, see Fig.~\ref{fig:erasure_path}). Bounded by available classical action, the universe halts the Szilard engine, abandoning the infinitely long sequence of the little golden ratio. It settles instead for a nearby coordinate with a short binary encoding—a substitution permitted because both coordinates remain operationally indistinguishable inside the quantum blob.
 
@@ -67,9 +67,9 @@ In this letter, we show how Landauer erasure inside Planck's quantum of action l
 
 \begin{figure}[htbp!]
     \centering
-    \includegraphics[width=\linewidth]{figures/simple_erasure_grid.png}
+    \includegraphics[width=\linewidth]{figures/encoding_grid.png}
 \caption{\textbf{Harmonic Oscillator Densities from Computational Simulations}.}
-\label{fig:simple_erasure_grid}
+\label{fig:encoding_grid}
 \end{figure}
 
 \section{The Quantum of Action}
@@ -407,16 +407,6 @@ The raw output was subsequently processed using multi-threaded \texttt{data.tabl
 \caption{\textbf{Encoding and erasure tree} (schematic).}
 \label{fig:erasure_tree}
 \end{figure*}
-
-\section{Thermodynamic Selection of Phase-Space Resonances}
-
-As the classical action boundary ($\Delta p$) expands, symplectic geometry demands a proportional compression of the conjugate squeezed resolution boundary ($\delta q$) \cite{Zurek2001, DeGosson2006}. When this boundary shrinks, a previously minimal-action microstate (such as a coordinate at $+1/2$) may no longer fit within the topologically valid quantum phase-space area. To instantiate the state, the system must search deeper into phase space and transition to a newly permitted structural resonance.
-
-Because every partition of continuous phase space expends a discrete quantum of Landauer action, the universe operates as a continuous phase-space Szilard engine that is strictly forbidden from executing redundant thermodynamic operations \cite{Landauer1961, Szilard1929}. According to Landauer's principle, the acquisition and erasure of physical data requires an unavoidable minimum expenditure of work, governed by the compression of the available phase-space volume \cite{PlenioVitelli2001, Bennett1973}. A naive mechanism that evaluates overlapping or unreduced intermediate boundaries would dissipate physical action without yielding new physical resolution, thereby violating the fundamental kinematic budget of the system \cite{Lloyd2000}.
-
-Consequently, the phase space does not fracture randomly. As demonstrated in the study of quantum chaos and nonlinear dynamics, driven quantum systems naturally resolve the intricate structure of classically mixed phase spaces into discrete stability zones---known as Arnol'd tongues---that lock onto pure rational hierarchies \cite{Gutzwiller1990, Haake2010}. The transition from a state at $+1/2$ to $+3/5$ represents the system migrating to the next available phase-space resonance characterized by a rational winding number \cite{Gutzwiller1990}. This mathematical necessity physically guarantees that the new resolution boundary is entirely mutually exclusive from all prior boundaries.
-
-The topological sequence that emerges---which ultimately generates the classical correspondence limit---is simply the signature of a Szilard engine operating at maximum theoretical efficiency \cite{PlenioVitelli2001}. The system migrates to the $+3/5$ partition because it represents the absolute thermodynamically cheapest path. By selecting exclusively non-redundant, rational mode-locking resonances, the universe seamlessly navigates the expanding kinematic boundaries while generating exactly zero thermodynamic waste \cite{Landauer1961, Gutzwiller1990}.
 
 \bibliography{main}
 \end{document}
