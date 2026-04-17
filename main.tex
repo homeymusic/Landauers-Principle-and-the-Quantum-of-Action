@@ -29,10 +29,10 @@
 
 \begin{document}
 
-\title{Landauer's Principle and the Quantum of Action}
+\title{The Quantum of Action and Landauer's Principle}
 
 \begin{abstract}
-Quantum microstates are operationally indistinguishable inside the quantum of action. We show that among these infinite possible microstates, only the microstate requiring the least action to encode and erase is realized. Least action granulates the continuum. It resolves the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
+Quantum microstates are operationally indistinguishable inside the quantum of action. Among these infinite possible microstates, the one realized requires the least action to kinematically partition and thermodynamically erase. Least action granulates the continuum. It resolves the coarse-grained configurations of quantum mechanics at low action into the fine-grained configurations of classical mechanics at high action.
 \end{abstract}
 
 \author{Brian S. Mulloy\orcidlink{0000-0002-1803-3172}}
@@ -50,7 +50,7 @@ Quantum microstates are operationally indistinguishable inside the quantum of ac
 
 \begin{equation}
 \label{eq:MainIdeaText}
-\text{Thermodynamic Erasure} \approx \text{Kinematic Encoding}
+\text{Thermodynamic Erasure} \approx \text{Kinematic Partition}
 \end{equation}
 
 \begin{equation}
@@ -73,7 +73,7 @@ N E_L \tau \le \frac{A}{h}(a_q + a_p)
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{figures/quantum_of_action.png}
-\caption{\textbf{The quantum of action} (schematic, 1D case). By geometrically translating the statistical Heisenberg limit, $\sigma_q \sigma_p \ge \hbar/2$, the classical semi-axes $\Delta q = \sqrt{2}\sigma_q$ and $\Delta p = \sqrt{2}\sigma_p$ establish the relation $\pi \Delta q \Delta p \ge h/2$. In phase space, this is the classical action area, $A \ge h/2$. Confined by these classical boundaries, the interior resolves into a conjugate pair of symplectic quantum blobs, $a_q = h/2$ and $a_p = h/2$, whose sum is the quantum of action, $h$. Specifically, $a_q$ is squeezed by the reciprocal boundary $\delta q = \hbar / \Delta p$ to area $\pi \delta q \Delta p = h/2$, while $a_p$ is squeezed by $\delta p = \hbar / \Delta q$ to area $\pi \Delta q \delta p = h/2$. These centered, orthogonal ellipses enclose their interior ellipse with quantum action area, $a \le h/2$, evaluated as $\pi \delta q \delta p = \pi \hbar^2/(\Delta q \Delta p)$. This inverse scaling geometrically enforces the correspondence principle: as the classical action area $A \ge h/2$ increases, the symplectic blobs $a_q=h/2$ and $a_p=h/2$ compress into fine cross hairs, shrinking the enclosed quantum action area $a \le h/2$ (see Fig.~\ref{fig:encoding_grid}). This symplectic hierarchy establishes quantum and classical relationships $a \le h/2 \le A$ and $a = (\pi \hbar)^2 / A$.}
+\caption{\textbf{The quantum of action} (schematic, 1D case). By geometrically translating the statistical Heisenberg limit, $\sigma_q \sigma_p \ge \hbar/2$, the classical semi-axes $\Delta q = \sqrt{2}\sigma_q$ and $\Delta p = \sqrt{2}\sigma_p$ establish the relation $\pi \Delta q \Delta p \ge h/2$. In phase space, this is the classical action area, $A \ge h/2$. Confined by these classical boundaries, the interior resolves into a conjugate pair of symplectic quantum blobs, $a_q = h/2$ and $a_p = h/2$, whose sum is the quantum of action, $h$. Specifically, $a_q$ is squeezed by the reciprocal boundary $\delta q = \hbar / \Delta p$ and area $\pi \delta q \Delta p = h/2$, while $a_p$ by the boundary $\delta p = \hbar / \Delta q$ and area $\pi \Delta q \delta p = h/2$. Together, these centered orthogonal ellipses enclose an interior ellipse with quantum action area, $a \le h/2$, evaluated as $\pi \delta q \delta p = \pi \hbar^2/(\Delta q \Delta p)$. This inverse scaling geometrically enforces the correspondence principle: as the classical action area $A \ge h/2$ increases, the symplectic blobs $a_q=h/2$ and $a_p=h/2$ compress into fine cross hairs, shrinking the enclosed quantum action area $a \le h/2$ (see Fig.~\ref{fig:partitioning_grid}). This symplectic hierarchy establishes the quantum-classical relationships $a = (\pi \hbar)^2 / A$ and $a \le h/2 \le A$.}
 \label{fig:quantum_of_action}
 \end{figure}
 
@@ -138,15 +138,15 @@ Substituting the squeezed boundaries, the area of this inscribed ellipse is $a =
 \delta q \delta p = \frac{\hbar^2}{\Delta q \Delta p}.
 \end{equation}
 
-While the traditional uncertainty principle $\sigma_q \sigma_p \ge \hbar/2$ demands the macroscopic quantum states underlying Schr{\"{o}}dinger's cat paradox \cite{Schrodinger1980Trimmer}, this squeezed uncertainty principle precludes those states and the cat paradox: as classical boundaries expand, they compress the conjugate blobs into fine crosshairs, enforcing the correspondence principle (see the bottom panel of Fig.~\ref{fig:harmonic_oscillator}).
+This inverse area scaling geometrically recovers the continuous-variable squeezed states established in quantum optics \cite{Glauber1963, Sudarshan1963, Caves1981}. While the traditional uncertainty principle $\sigma_q \sigma_p \ge \hbar/2$ demands the macroscopic quantum states underlying Schr{\"{o}}dinger's cat paradox \cite{Schrodinger1980Trimmer}, this squeezed uncertainty principle precludes those states and the cat paradox: as classical boundaries expand, they compress the conjugate blobs into fine crosshairs, enforcing the correspondence principle (see the bottom panel of Fig.~\ref{fig:harmonic_oscillator}).
 
 \section{Landauer's Principle}
 
 \begin{figure}[htbp!]
     \centering
-    \includegraphics[width=\linewidth]{figures/encoding_grid.png}
+    \includegraphics[width=\linewidth]{figures/partitioning_grid.png}
 \caption{\textbf{Position densities for the harmonic oscillator}.}
-\label{fig:encoding_grid}
+\label{fig:partitioning_grid}
 \end{figure}
 
 Landauer's principle establishes the minimum thermodynamic cost of the thermodynamic erasure of one bit as $E_L = k_B T \ln{2}$ \cite{Landauer1961}.
@@ -192,7 +192,7 @@ Applying this limit to the geometry of phase space, we posit that the total acti
 
 \begin{equation}
 \label{eq:ErasureAndClassicalActionPlain}
-\text{Thermodynamic Erasure} \le \text{Kinematic Encoding}
+\text{Thermodynamic Erasure} \le \text{Kinematic Partitioning}
 \end{equation}
 
 \begin{equation}
@@ -214,15 +214,15 @@ Planck demonstrated \cite{Planck1906} that a classical phase space of area $A$ h
 (N_q + N_p) E_L \tau \le \frac{A}{h} (\pi \delta q \Delta p + \pi \Delta q \delta p)
 \end{equation}
 
-Where the erasure paths from the least-action microstate $(q^\natural, p^\natural)$ to the blob centers $(q_b, p_b)$ are bounded by $|\epsilon_q| \le \delta q$ and $|\epsilon_p| \le \delta p$.
+Where the erasure paths from the least-action microstate $(q_\blacktriangledown, p_\blacktriangledown)$ to the blob centers $(q_b, p_b)$ are bounded by $|\epsilon_q| \le \delta q$ and $|\epsilon_p| \le \delta p$.
 
 \subsection{Anatomy of the Erasure Action}
 
 \begin{figure}[t!]
     \centering
-    \includegraphics[width=\linewidth]{figures/encoding_path.png}
-\caption{\textbf{Kinematic encoding and thermodynamic erasure} (schematic).}
-\label{fig:encoding_path}
+    \includegraphics[width=\linewidth]{figures/partitioning_path.png}
+\caption{\textbf{Kinematic partitioning and thermodynamic erasure} (schematic).}
+\label{fig:partitioning_path}
 \end{figure}
 
 To understand the physical machinery of Equation~\ref{eq:GeometricActionLimit}, we can isolate the provisioning and expenditure of coordinate bits:
@@ -258,7 +258,8 @@ When the classical momentum boundary ($\Delta p$) grows, the squeezed position b
 
 \section{Landauer Density}
 
-Standard phase-space formulations of quantum mechanics traditionally employ the Wigner quasi-probability distribution $W(q,p)$ \cite{Wigner1932}. In the context of information erasure, however, we instead introduce the Landauer erasure density $L(q,p)$ as a sum of discrete Iverson brackets \cite{Knuth1992}—mathematical switches that snap to exactly 1 when a coordinate is occupied and 0 otherwise—over the quantum blobs:
+
+Standard phase-space formulations of quantum mechanics traditionally employ the Wigner quasi-probability distribution $W(q,p)$ \cite{Wigner1932}. However, because a finite system possesses a finite thermodynamic bit budget (N), the physically accessible phase space cannot be a continuous manifold; it must be a discretely resolved grid. We instead introduce the Landauer density $L(q,p)$ as a sum of discrete Iverson brackets \cite{Knuth1992}—mathematical switches that snap to exactly 1 when a coordinate is occupied and 0 otherwise—over the quantum blobs:
 
 \begin{equation}
 \label{eq:JointErasure}
@@ -267,6 +268,7 @@ L(q,p) = \sum_{b} \left[ q = \frac{A}{\pi \hbar} \epsilon_{q,b} \right] \left[ p
 
 Because Landauer erasure evaluates to a discrete coordinate grid, the marginal distributions are obtained by summing over the conjugate variables:
 
+
 \begin{equation}
 \label{eq:Marginals}
 N(q) = \sum_{p} L(q,p)
@@ -274,23 +276,23 @@ N(q) = \sum_{p} L(q,p)
 N(p) = \sum_{q} L(q,p)
 \end{equation}
 
-For any phase-space coordinate, $x \in \{q, p\}$, an encoding function selects the least action microstate $x^\natural$ from among infite possible microstates $\{x_\mu\}$ inside the squeezed boundary $\delta x$ centered on the blob coordinate $x_b$, yielding a binary sequence $s_x$:
+For any phase-space coordinate, $x \in \{q, p\}$, a partitioning function selects the least action microstate $x_\blacktriangledown$ from among infite possible microstates $\{x_\mu\}$ inside the squeezed boundary $\delta x$ centered on the blob coordinate $x_b$, yielding a binary sequence $s_x$:
 
 \begin{equation}
-\label{eq:EncoderFunction}
-(x^\natural, s_x) = \operatorname{ENCODE}(x_b, \delta x)
+\label{eq:PartitionFunction}
+(x_\blacktriangledown, s_x) = \operatorname{PARTITION}(x_b, \delta x)
 \end{equation}
 
-Following Bennett's protocol \cite{Bennett1973}, we invert and reverse the encoded binary path $s_x$ to form the uncomputation path $(\bar{s}_x)^R$, where both paths have bit count $N_x = |s_x| = |(\bar{s}_x)^R|$.
+Following Bennett's protocol \cite{Bennett1973}, we invert and reverse the binary partition sequence $s_x$ to form the uncomputation path $(\bar{s}_x)^R$, where both paths have bit count $N_x = |s_x| = |(\bar{s}_x)^R|$.
 
 Physical erasure of this sequence uncomputes the microstate back to the ground state ($x_0$). This process expends Landauer action ($\Delta A_L = N_x E_L \tau$) to the environment, yielding the phase-space displacement $\epsilon_x$:
 
 \begin{equation}
 \label{eq:ErasureFunction}
-\epsilon_x = \operatorname{ERASE}(s_x, x^\natural, x_b), \quad \text{expends} \quad \Delta A_L = N_x E_L \tau
+\epsilon_x = \operatorname{ERASE}(s_x, x_\blacktriangledown, x_b), \quad \text{expends} \quad \Delta A_L = N_x E_L \tau
 \end{equation}
 
-The vector $\mathbf{\epsilon} = (\epsilon_q,\epsilon_p)$ is the distance from the least-action state $(q^\natural, p^\natural)$ to the blob center $(q_b, p_b)$. The observed classical coordinates $(q,p)$ are these displacements scaled by the geometric capacity $\frac{A}{\pi \hbar}$:
+The vector $\mathbf{\epsilon} = (\epsilon_q,\epsilon_p)$ is the distance from the least-action state $(q_\blacktriangledown, p_\blacktriangledown)$ to the blob center $(q_b, p_b)$. The observed classical coordinates $(q,p)$ are these displacements scaled by the geometric capacity $\frac{A}{\pi \hbar}$:
 
 \begin{equation}
 \label{eq:ObservedCoordinates}
@@ -376,19 +378,19 @@ To ensure the binary partitioning of the system preserves physical symmetry, the
 \widetilde{\delta x} = \frac{\widetilde{\delta x}}{\widetilde{\Delta x}} = \frac{\frac{2}{\pi}\sqrt{A_0/A}}{\sqrt{A/A_0}} = \frac{2}{\pi} \frac{A_0}{A}.
 \end{equation}
  
- For each state, the thermodynamic erasure was computed using a custom C++ simulation engine bound to an R-based parallel data pipeline (\texttt{Rcpp} and \texttt{RcppParallel}). To simulate the physical encoding function $\operatorname{ENCODE}$, the binary phase-space partitioning uses a Signed Stern-Brocot tree \cite{ConcreteMath, Niqui2007}.
+ For each state, the thermodynamic erasure was computed using a custom C++ simulation engine bound to an R-based parallel data pipeline (\texttt{Rcpp} and \texttt{RcppParallel}). To simulate the physical partitioning function $\operatorname{PARTITION}$, the binary phase-space partitioning uses a Signed Stern-Brocot tree \cite{ConcreteMath, Niqui2007}.
 
 Seeded by the blob centers ($\tilde{x}_b$) and the relative algorithmic tolerance ($\widetilde{\delta x}$), the interval is dynamically partitioned into a binary sequence:
 
 \begin{algorithmic}[1]
-\Function{ENCODE}{$\widetilde{x_b}, \widetilde{\delta x}$}
+\Function{PARTITION}{$\widetilde{x_b}, \widetilde{\delta x}$}
     \State $\text{left} \gets (-1, 0)$
     \State $\text{num} \gets 0, \quad \text{den} \gets 1$
-    \State $\widetilde{x^\natural} \gets \text{num} / \text{den}$
+    \State $\widetilde{x_\blacktriangledown} \gets \text{num} / \text{den}$
     \State $\text{right} \gets (1, 0)$
     \State $s_x \gets \text{``''}$
-    \While{$|\widetilde{x^\natural} - \widetilde{x_b}| > \widetilde{\delta x}$}
-        \If{$\tilde{x}^\natural < \tilde{x}_b$} 
+    \While{$|\widetilde{x_\blacktriangledown} - \widetilde{x_b}| > \widetilde{\delta x}$}
+        \If{$\tilde{x}_\blacktriangledown < \tilde{x}_b$} 
             \State $\text{left} \gets (\text{num}, \text{den})$
             \State $s_x \gets s_x + \text{``1''}$
         \Else 
@@ -397,25 +399,25 @@ Seeded by the blob centers ($\tilde{x}_b$) and the relative algorithmic toleranc
         \EndIf
         \State $\text{num} \gets \text{left}_{\text{num}} + \text{right}_{\text{num}}$
         \State $\text{den} \gets \text{left}_{\text{den}} + \text{right}_{\text{den}}$
-        \State $\tilde{x}^\natural \gets \text{num} / \text{den}$
+        \State $\tilde{x}_\blacktriangledown \gets \text{num} / \text{den}$
     \EndWhile
-    \State \Return $\tilde{x}^\natural, s_x$
+    \State \Return $\tilde{x}_\blacktriangledown, s_x$
 \EndFunction
 \end{algorithmic}
 
 The engine enforces a mathematical condition for compact support; the iterative \texttt{while} loop operates under a closed-set limit, halting the algorithm the moment the relative erasure displacement $|\tilde{\epsilon}_x|$ satisfies the mapped squeezed boundary $\widetilde{\delta x}$. This prevents artificial inflation of the Landauer action and ensures the phase-space volume is bounded by the classical action capacity. 
 
-Once encoded, the universe must physically erase the state. For example, let $s_x = \mathtt{1101}$. Taking the bitwise complement gives $\bar{s}_x = \mathtt{0010}$, and reversing it yields the uncomputation path $(\bar{s}_x)^R = \mathtt{0100}$. By following $(\bar{s}_x)^R$, the encoded sequence $s_x$ is irreversibly destroyed. This erasure dissipates the Landauer action and yields the observable displacement:
+Once partitioned, the universe must physically erase the state. For example, let $s_x = \mathtt{1101}$. Taking the bitwise complement gives $\bar{s}_x = \mathtt{0010}$, and reversing it yields the uncomputation path $(\bar{s}_x)^R = \mathtt{0100}$. By following $(\bar{s}_x)^R$, the partition sequence $s_x$ is irreversibly destroyed. This erasure dissipates the Landauer action and yields the observable displacement:
 
 \begin{algorithmic}[1]
-\Function{ERASE}{$(\bar{s}_x)^R, \widetilde{x^\natural}, \widetilde{x_b}$}
+\Function{ERASE}{$(\bar{s}_x)^R, \widetilde{x_\blacktriangledown}, \widetilde{x_b}$}
     \State $N_x \gets |(\bar{s}_x)^R|$
     \While{$N_x > 0$}
         \State \Call{ShiftLeft}{$(\bar{s}_x)^R$} 
         \Statex \Comment{Expends action $k_B T \ln{2} \tau$}
         \State $N_x \gets |(\bar{s}_x)^R|$
     \EndWhile
-    \State $\widetilde{\epsilon_x} \gets \widetilde{x^\natural} - \widetilde{x_b}$ \Comment{The normalized phase-space displacement}
+    \State $\widetilde{\epsilon_x} \gets \widetilde{x_\blacktriangledown} - \widetilde{x_b}$ \Comment{The normalized phase-space displacement}
     \State \Return $\widetilde{\epsilon_x}$
 \EndFunction
 \end{algorithmic}
@@ -424,9 +426,9 @@ The raw output was subsequently processed using multi-threaded routines to calcu
 
 \begin{figure*}[t!]
     \centering
-    \includegraphics[width=\linewidth]{figures/encoding_tree.png}
-\caption{\textbf{Kinematic encoding and thermodynamic erasure tree} (schematic).}
-\label{fig:encoding_tree}
+    \includegraphics[width=\linewidth]{figures/partitioning_tree.png}
+\caption{\textbf{Kinematic partitioning and thermodynamic erasure tree} (schematic).}
+\label{fig:partitioning_tree}
 \end{figure*}
 
 \bibliography{main}
