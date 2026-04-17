@@ -256,27 +256,26 @@ Isolating the conjugate pairs reveals the causal sequence: the expanding classic
 
 When the classical momentum boundary ($\Delta p$) grows, the squeezed position boundary ($\delta q$) must shrink. The universe must therefore spend more bits ($N_q$) to select and erase the state. This changing bit budget dictates the physics we observe: low action affords only enough bits for discrete quantum configurations, while high action supplies the bit budget required to draw smooth classical trajectories.
 
-\section{Landauer Density}
+\section{Least-Action Density}
 
 
-Standard phase-space formulations of quantum mechanics traditionally employ the Wigner quasi-probability distribution $W(q,p)$ \cite{Wigner1932}. However, because a finite system possesses a finite thermodynamic bit budget (N), the physically accessible phase space cannot be a continuous manifold; it must be a discretely resolved grid. We instead introduce the Landauer density $L(q,p)$ as a sum of discrete Iverson brackets \cite{Knuth1992}—mathematical switches that snap to exactly 1 when a coordinate is occupied and 0 otherwise—over the quantum blobs:
+Standard phase-space formulations of quantum mechanics traditionally employ the Wigner quasi-probability distribution $W(q,p)$ \cite{Wigner1932}. However, because a finite system possesses a finite kinematic bit budget (N), the physically accessible phase space cannot be a continuous manifold; it must be a discretely resolved grid. We instead introduce the least-action density $\blacktriangledown(q,p)$ as a sum of discrete Iverson brackets \cite{Knuth1992}—mathematical switches that snap to exactly 1 when a coordinate is occupied and 0 otherwise—over the quantum blobs:
 
 \begin{equation}
 \label{eq:JointErasure}
-L(q,p) = \sum_{b} \left[ q = \frac{A}{\pi \hbar} \epsilon_{q,b} \right] \left[ p = \frac{A}{\pi \hbar} \epsilon_{p,b} \right]
+\blacktriangledown(q,p) = \sum_{b} \left[ q = \frac{A}{\pi \hbar} \epsilon_{q,b} \right] \left[ p = \frac{A}{\pi \hbar} \epsilon_{p,b} \right]
 \end{equation}
 
-Because Landauer erasure evaluates to a discrete coordinate grid, the marginal distributions are obtained by summing over the conjugate variables:
-
+Because the kinematic partitioning evaluates to a discrete coordinate grid, the marginal distributions are obtained by summing over the conjugate variables:
 
 \begin{equation}
 \label{eq:Marginals}
-N(q) = \sum_{p} L(q,p)
+N(q) = \sum_{p} \blacktriangledown(q,p)
 \quad \text{and} \quad
-N(p) = \sum_{q} L(q,p)
+N(p) = \sum_{q} \blacktriangledown(q,p)
 \end{equation}
 
-For any phase-space coordinate, $x \in \{q, p\}$, a partitioning function selects the least action microstate $x_\blacktriangledown$ from among infite possible microstates $\{x_\mu\}$ inside the squeezed boundary $\delta x$ centered on the blob coordinate $x_b$, yielding a binary sequence $s_x$:
+For any phase-space coordinate, $x \in \{q, p\}$, a partitioning function selects the least action microstate $x_\blacktriangledown$ from among infinite possible microstates $\{x_\mu\}$ inside the squeezed boundary $\delta x$ centered on the blob coordinate $x_b$, yielding a binary sequence $s_x$:
 
 \begin{equation}
 \label{eq:PartitionFunction}
